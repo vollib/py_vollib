@@ -1,0 +1,19 @@
+*.o
+*.pyc
+.python-version
+.cache
+__pycache__
+
+build
+dist
+*.egg-info
+*.egg
+
+*.sh
+*scratch*
+
+# idea IDE
+.idea/
+
+# OS Specific
+.DS_Store
