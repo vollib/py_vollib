@@ -1,0 +1,731 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>py_vollib.black package &mdash; py_vollib 1.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="py_vollib 1.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="py_vollib package" href="py_vollib.html"/>
+        <link rel="next" title="py_vollib.black.greeks package" href="py_vollib.black.greeks.html"/>
+        <link rel="prev" title="py_vollib package" href="py_vollib.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> py_vollib
+          
+
+          
+            
+            <img src="../_static/vollib_60.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">   py_vollib modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="py_vollib.html">py_vollib package</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">py_vollib.black package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="py_vollib.black.greeks.html">py_vollib.black.greeks package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="py_vollib.black_scholes.html">py_vollib.black_scholes package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_vollib.black_scholes_merton.html">py_vollib.black_scholes_merton package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_vollib.helpers.html">py_vollib.helpers package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_vollib.ref_python.html">py_vollib.ref_python package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py_vollib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">py_vollib</a> &raquo;</li>
+        
+          <li><a href="py_vollib.html">py_vollib package</a> &raquo;</li>
+        
+      <li>py_vollib.black package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/apidoc/py_vollib.black.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="py-vollib-black-package">
+<h1>py_vollib.black package<a class="headerlink" href="#py-vollib-black-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="py_vollib.black.greeks.html">py_vollib.black.greeks package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="py_vollib.black.greeks.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py_vollib.black.greeks.html#module-py_vollib.black.greeks.analytical">py_vollib.black.greeks.analytical module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="py_vollib.black.greeks.html#py-vollib-black-greeks-analytical">py_vollib.black.greeks.analytical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_vollib.black.greeks.html#about-letsberational">About LetsBeRational:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="py_vollib.black.greeks.html#module-py_vollib.black.greeks.numerical">py_vollib.black.greeks.numerical module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="py_vollib.black.greeks.html#py-vollib-black-greeks-numerical">py_vollib.black.greeks.numerical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_vollib.black.greeks.html#id1">About LetsBeRational:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="py_vollib.black.greeks.html#module-py_vollib.black.greeks">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-py_vollib.black.implied_volatility">
+<span id="py-vollib-black-implied-volatility-module"></span><h2>py_vollib.black.implied_volatility module<a class="headerlink" href="#module-py_vollib.black.implied_volatility" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="py-vollib-black-implied-volatility">
+<h3>py_vollib.black.implied_volatility<a class="headerlink" href="#py-vollib-black-implied-volatility" title="Permalink to this headline">¶</a></h3>
+<p>A library for option pricing, implied volatility, and
+greek calculation.  py_vollib is based on lets_be_rational,
+a Python wrapper for LetsBeRational by Peter Jaeckel as
+described below.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body">© 2017 Gammon Capital LLC</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body">MIT, see LICENSE for more details.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="about-letsberational">
+<h3>About LetsBeRational:<a class="headerlink" href="#about-letsberational" title="Permalink to this headline">¶</a></h3>
+<p>The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .</p>
+<p>Permission to use, copy, modify, and distribute this software is freely granted,
+provided that this notice is preserved.</p>
+<p>WARRANTY DISCLAIMER
+The Software is provided &#8220;as is&#8221; without warranty of any kind, either express or implied,
+including without limitation any implied warranties of condition, uninterrupted use,
+merchantability, fitness for a particular purpose, or non-infringement.
+======================================================================================</p>
+<dl class="function">
+<dt id="py_vollib.black.implied_volatility.implied_volatility">
+<code class="descclassname">py_vollib.black.implied_volatility.</code><code class="descname">implied_volatility</code><span class="sig-paren">(</span><em>discounted_option_price</em>, <em>F</em>, <em>K</em>, <em>r</em>, <em>t</em>, <em>flag</em><span class="sig-paren">)</span><a class="headerlink" href="#py_vollib.black.implied_volatility.implied_volatility" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the implied volatility of the Black option price</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>discounted_option_price</strong> (<em>float</em>) &#8211; discounted Black price of a futures option</li>
+<li><strong>F</strong> (<em>float</em>) &#8211; underlying futures price</li>
+<li><strong>K</strong> (<em>float</em>) &#8211; strike price</li>
+<li><strong>r</strong> (<em>float</em>) &#8211; the risk-free interest rate</li>
+<li><strong>t</strong> (<em>float</em>) &#8211; time to expiration in years</li>
+<li><strong>flag</strong> (<em>str</em>) &#8211; &#8216;p&#8217; or &#8216;c&#8217; for put or call</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="o">.</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="o">.</span><span class="mi">02</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">discounted_call_price</span> <span class="o">=</span> <span class="n">black</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iv</span> <span class="o">=</span> <span class="n">implied_volatility_of_discounted_option_price</span><span class="p">(</span>
+<span class="gp">... </span><span class="n">discounted_call_price</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expected_price</span> <span class="o">=</span> <span class="mf">5.5811067246</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expected_iv</span> <span class="o">=</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_price</span> <span class="o">-</span> <span class="n">discounted_call_price</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_iv</span> <span class="o">-</span> <span class="n">iv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_vollib.black.implied_volatility.implied_volatility_of_discounted_option_price">
+<code class="descclassname">py_vollib.black.implied_volatility.</code><code class="descname">implied_volatility_of_discounted_option_price</code><span class="sig-paren">(</span><em>discounted_option_price</em>, <em>F</em>, <em>K</em>, <em>r</em>, <em>t</em>, <em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_vollib/black/implied_volatility.html#implied_volatility_of_discounted_option_price"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_vollib.black.implied_volatility.implied_volatility_of_discounted_option_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the implied volatility of the Black option price</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>discounted_option_price</strong> (<em>float</em>) &#8211; discounted Black price of a futures option</li>
+<li><strong>F</strong> (<em>float</em>) &#8211; underlying futures price</li>
+<li><strong>K</strong> (<em>float</em>) &#8211; strike price</li>
+<li><strong>r</strong> (<em>float</em>) &#8211; the risk-free interest rate</li>
+<li><strong>t</strong> (<em>float</em>) &#8211; time to expiration in years</li>
+<li><strong>flag</strong> (<em>str</em>) &#8211; &#8216;p&#8217; or &#8216;c&#8217; for put or call</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="o">.</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="o">.</span><span class="mi">02</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">discounted_call_price</span> <span class="o">=</span> <span class="n">black</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iv</span> <span class="o">=</span> <span class="n">implied_volatility_of_discounted_option_price</span><span class="p">(</span>
+<span class="gp">... </span><span class="n">discounted_call_price</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expected_price</span> <span class="o">=</span> <span class="mf">5.5811067246</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expected_iv</span> <span class="o">=</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_price</span> <span class="o">-</span> <span class="n">discounted_call_price</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_iv</span> <span class="o">-</span> <span class="n">iv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_vollib.black.implied_volatility.implied_volatility_of_undiscounted_option_price">
+<code class="descclassname">py_vollib.black.implied_volatility.</code><code class="descname">implied_volatility_of_undiscounted_option_price</code><span class="sig-paren">(</span><em>undiscounted_option_price</em>, <em>F</em>, <em>K</em>, <em>t</em>, <em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_vollib/black/implied_volatility.html#implied_volatility_of_undiscounted_option_price"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_vollib.black.implied_volatility.implied_volatility_of_undiscounted_option_price" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the implied volatility of the undiscounted Black option price</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>undiscounted_option_price</strong> (<em>float</em>) &#8211; undiscounted Black price of a futures option</li>
+<li><strong>F</strong> (<em>float</em>) &#8211; underlying futures price</li>
+<li><strong>K</strong> (<em>float</em>) &#8211; strike price</li>
+<li><strong>t</strong> (<em>float</em>) &#8211; time to expiration in years</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="o">.</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">undiscounted_call_price</span> <span class="o">=</span> <span class="n">undiscounted_black</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iv</span> <span class="o">=</span> <span class="n">implied_volatility_of_undiscounted_option_price</span><span class="p">(</span>
+<span class="gp">... </span><span class="n">undiscounted_call_price</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expected_price</span> <span class="o">=</span> <span class="mf">5.6371977797</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expected_iv</span> <span class="o">=</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_price</span> <span class="o">-</span> <span class="n">undiscounted_call_price</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_iv</span> <span class="o">-</span> <span class="n">iv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_vollib.black.implied_volatility.implied_volatility_of_undiscounted_option_price_limited_iterations">
+<code class="descclassname">py_vollib.black.implied_volatility.</code><code class="descname">implied_volatility_of_undiscounted_option_price_limited_iterations</code><span class="sig-paren">(</span><em>undiscounted_option_price</em>, <em>F</em>, <em>K</em>, <em>t</em>, <em>flag</em>, <em>N</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_vollib/black/implied_volatility.html#implied_volatility_of_undiscounted_option_price_limited_iterations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_vollib.black.implied_volatility.implied_volatility_of_undiscounted_option_price_limited_iterations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate implied volatility of the undiscounted Black 
+option price with limited iterations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>undiscounted_option_price</strong> (<em>float</em>) &#8211; undiscounted Black price of a futures option</li>
+<li><strong>F</strong> (<em>float</em>) &#8211; underlying futures price</li>
+<li><strong>K</strong> (<em>float</em>) &#8211; strike price</li>
+<li><strong>t</strong> (<em>float</em>) &#8211; time to expiration in years</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="o">.</span><span class="mi">232323232</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">price</span> <span class="o">=</span> <span class="n">undiscounted_black</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iv</span> <span class="o">=</span> <span class="n">implied_volatility_of_undiscounted_option_price_limited_iterations</span><span class="p">(</span>
+<span class="gp">... </span><span class="n">price</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">flag</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expected_price</span> <span class="o">=</span> <span class="mf">6.54635543387</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expected_iv</span> <span class="o">=</span> <span class="mf">0.232323232</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_price</span> <span class="o">-</span> <span class="n">price</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_iv</span> <span class="o">-</span> <span class="n">iv</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_vollib.black.implied_volatility.normalised_implied_volatility">
+<code class="descclassname">py_vollib.black.implied_volatility.</code><code class="descname">normalised_implied_volatility</code><span class="sig-paren">(</span><em>beta</em>, <em>x</em>, <em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_vollib/black/implied_volatility.html#normalised_implied_volatility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_vollib.black.implied_volatility.normalised_implied_volatility" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the normalised Black implied volatility,
+a time invariant transformation
+of Black implied volatility.</p>
+<p>Keyword arguments:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>float</em>) &#8211; ln(F/K) where K is the strike price, and F is the futures price</li>
+<li><strong>beta</strong> (<em>float</em>) &#8211; the normalized Black price</li>
+<li><strong>flag</strong> (<em>str</em>) &#8211; &#8216;p&#8217; or &#8216;c&#8217; for put or call</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">beta_call</span> <span class="o">=</span> <span class="n">normalised_black</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">beta_put</span> <span class="o">=</span> <span class="n">normalised_black</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.23232323888</span><span class="p">,</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">normalized_b76_iv_call</span> <span class="o">=</span> <span class="n">normalised_implied_volatility</span><span class="p">(</span><span class="n">beta_call</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">normalized_b76_iv_put</span> <span class="o">=</span> <span class="n">normalised_implied_volatility</span><span class="p">(</span><span class="n">beta_put</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expected_price</span> <span class="o">=</span> <span class="mf">0.0796556745541</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expected_iv</span> <span class="o">=</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_price</span> <span class="o">-</span> <span class="n">beta_call</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_iv</span> <span class="o">-</span> <span class="n">normalized_b76_iv_call</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expected_price</span> <span class="o">=</span> <span class="mf">0.0509710222785</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expected_iv</span> <span class="o">=</span> <span class="mf">0.23232323888</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_price</span> <span class="o">-</span> <span class="n">beta_put</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_iv</span> <span class="o">-</span> <span class="n">normalized_b76_iv_put</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_vollib.black.implied_volatility.normalised_implied_volatility_limited_iterations">
+<code class="descclassname">py_vollib.black.implied_volatility.</code><code class="descname">normalised_implied_volatility_limited_iterations</code><span class="sig-paren">(</span><em>beta</em>, <em>x</em>, <em>flag</em>, <em>N</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_vollib/black/implied_volatility.html#normalised_implied_volatility_limited_iterations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_vollib.black.implied_volatility.normalised_implied_volatility_limited_iterations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the normalised Black implied volatility,
+with limited iterations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>float</em>) &#8211; ln(F/K) where K is the strike price, and F is the futures price</li>
+<li><strong>beta</strong> (<em>float</em>) &#8211; the normalized Black price</li>
+<li><strong>flag</strong> (<em>str</em>) &#8211; &#8216;p&#8217; or &#8216;c&#8217; for put or call</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">beta_call</span> <span class="o">=</span> <span class="n">normalised_black</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">beta_put</span> <span class="o">=</span> <span class="n">normalised_black</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.23232323888</span><span class="p">,</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">normalized_b76_iv_call</span> <span class="o">=</span> <span class="n">normalised_implied_volatility_limited_iterations</span><span class="p">(</span><span class="n">beta_call</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">normalized_b76_iv_put</span> <span class="o">=</span> <span class="n">normalised_implied_volatility_limited_iterations</span><span class="p">(</span><span class="n">beta_put</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expected_price</span> <span class="o">=</span> <span class="mf">0.0796556745541</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expected_iv</span> <span class="o">=</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_price</span> <span class="o">-</span> <span class="n">beta_call</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_iv</span> <span class="o">-</span> <span class="n">normalized_b76_iv_call</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">expected_price</span> <span class="o">=</span> <span class="mf">0.0509710222785</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">expected_iv</span> <span class="o">=</span> <span class="mf">0.23232323888</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_price</span> <span class="o">-</span> <span class="n">beta_put</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">expected_iv</span> <span class="o">-</span> <span class="n">normalized_b76_iv_put</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.00001</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="module-py_vollib.black">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-py_vollib.black" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="py-vollib-black">
+<h3>py_vollib.black<a class="headerlink" href="#py-vollib-black" title="Permalink to this headline">¶</a></h3>
+<p>Copyright © 2017</p>
+<p>A library for option pricing, implied volatility, and
+greek calculation.  py_vollib is based on lets_be_rational,
+a Python wrapper for LetsBeRational by Peter Jaeckel as
+described below.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">copyright:</th><td class="field-body">© 2017 Gammon Capital LLC</td>
+</tr>
+<tr class="field-even field"><th class="field-name">license:</th><td class="field-body">MIT, see LICENSE for more details.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id1">
+<h3>About LetsBeRational:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .</p>
+<p>Permission to use, copy, modify, and distribute this software is freely granted,
+provided that this notice is preserved.</p>
+<p>WARRANTY DISCLAIMER
+The Software is provided &#8220;as is&#8221; without warranty of any kind, either express or implied,
+including without limitation any implied warranties of condition, uninterrupted use,
+merchantability, fitness for a particular purpose, or non-infringement.
+======================================================================================</p>
+<dl class="function">
+<dt id="py_vollib.black.black">
+<code class="descclassname">py_vollib.black.</code><code class="descname">black</code><span class="sig-paren">(</span><em>flag</em>, <em>F</em>, <em>K</em>, <em>t</em>, <em>r</em>, <em>sigma</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_vollib/black.html#black"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_vollib.black.black" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the (discounted) Black option price.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>F</strong> (<em>float</em>) &#8211; underlying futures price</li>
+<li><strong>K</strong> (<em>float</em>) &#8211; strike price</li>
+<li><strong>sigma</strong> (<em>float</em>) &#8211; annualized standard deviation, or volatility</li>
+<li><strong>t</strong> (<em>float</em>) &#8211; time to expiration in years</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="o">.</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="o">.</span><span class="mi">02</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">black</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+<span class="go">5.5811067246048118</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_vollib.black.normalised_black">
+<code class="descclassname">py_vollib.black.</code><code class="descname">normalised_black</code><span class="sig-paren">(</span><em>x</em>, <em>s</em>, <em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_vollib/black.html#normalised_black"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_vollib.black.normalised_black" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the normalised Black value,
+a &#8220;time value put-call invariant&#8221; transformation
+of the Black pricing formula.  In other words, 
+the amount of time value, or &#8220;extrinsic&#8221; value 
+of a put and call at the same log-moneyness will
+be always be identical.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>float</em>) &#8211; ln(F/K) where K is the strike price, and F is the futures price</li>
+<li><strong>s</strong> (<em>float</em>) &#8211; volatility times the square root of time to expiration</li>
+<li><strong>flag</strong> (<em>str</em>) &#8211; &#8216;p&#8217; or &#8216;c&#8217; for put or call</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">normalised_intrinsic</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">flag</span><span class="p">):</span> 
+<span class="gp">... </span>    <span class="k">if</span> <span class="n">flag</span><span class="o">==</span><span class="s1">&#39;c&#39;</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">F</span><span class="o">-</span><span class="n">K</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">F</span><span class="o">*</span><span class="n">K</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+<span class="gp">... </span>    <span class="k">else</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">K</span><span class="o">-</span><span class="n">F</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">F</span><span class="o">*</span><span class="n">K</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>    
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="mf">100.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mf">95.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">log</span><span class="p">(</span><span class="n">F</span><span class="o">/</span><span class="n">K</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">v</span> <span class="o">*</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>    
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">normalised_black</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="go">0.061296663817558904</span>
+</pre></div>
+</div>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">normalised_black</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="go">0.11259558142181655</span>
+</pre></div>
+</div>
+<p>&#8216;&#8217;&#8217;
+Here the put is OTM, so has only time value.
+The call is ITM, having both intrinsic and time value.
+Since the time value must be equal for both, 
+the call normalised price minus its normalised 
+intrinsic must equal the put normalised price.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">normalised_black</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="s1">&#39;p&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span>
+<span class="gp">... </span><span class="n">normalised_black</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">normalised_intrinsic</span><span class="p">(</span><span class="n">F</span><span class="p">,</span><span class="n">K</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)))</span><span class="o">&lt;</span><span class="mf">1e-12</span> 
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="py_vollib.black.undiscounted_black">
+<code class="descclassname">py_vollib.black.</code><code class="descname">undiscounted_black</code><span class="sig-paren">(</span><em>F</em>, <em>K</em>, <em>sigma</em>, <em>t</em>, <em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_vollib/black.html#undiscounted_black"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_vollib.black.undiscounted_black" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the <strong>undiscounted</strong> Black option price.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>F</strong> (<em>float</em>) &#8211; underlying futures price</li>
+<li><strong>K</strong> (<em>float</em>) &#8211; strike price</li>
+<li><strong>sigma</strong> (<em>float</em>) &#8211; annualized standard deviation, or volatility</li>
+<li><strong>t</strong> (<em>float</em>) &#8211; time to expiration in years</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="o">.</span><span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">undiscounted_black</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
+<span class="go">5.637197779701664</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="py_vollib.black.greeks.html" class="btn btn-neutral float-right" title="py_vollib.black.greeks package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="py_vollib.html" class="btn btn-neutral" title="py_vollib package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Gammon Capital LLC..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

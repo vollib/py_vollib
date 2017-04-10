@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>py_vollib.black_scholes.greeks.numerical &mdash; py_vollib 1.0.1 documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../../search.html"/>
+    <link rel="top" title="py_vollib 1.0.1 documentation" href="../../../../index.html"/>
+        <link rel="up" title="py_vollib.black_scholes" href="../../black_scholes.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> py_vollib
+          
+
+          
+            
+            <img src="../../../../_static/vollib_60.png" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../apidoc/modules.html">   py_vollib modules</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">py_vollib</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../../black_scholes.html">py_vollib.black_scholes</a> &raquo;</li>
+        
+      <li>py_vollib.black_scholes.greeks.numerical</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for py_vollib.black_scholes.greeks.numerical</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">py_vollib.black_scholes.greeks.numerical</span>
+<span class="sd">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+
+<span class="sd">A library for option pricing, implied volatility, and</span>
+<span class="sd">greek calculation.  py_vollib is based on lets_be_rational,</span>
+<span class="sd">a Python wrapper for LetsBeRational by Peter Jaeckel as</span>
+<span class="sd">described below.</span>
+
+<span class="sd">:copyright: © 2017 Gammon Capital LLC</span>
+<span class="sd">:license: MIT, see LICENSE for more details.</span>
+
+<span class="sd">About LetsBeRational:</span>
+<span class="sd">~~~~~~~~~~~~~~~~~~~~~</span>
+
+<span class="sd">The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .</span>
+
+<span class="sd">======================================================================================</span>
+<span class="sd">Copyright © 2013-2014 Peter Jäckel.</span>
+
+<span class="sd">Permission to use, copy, modify, and distribute this software is freely granted,</span>
+<span class="sd">provided that this notice is preserved.</span>
+
+<span class="sd">WARRANTY DISCLAIMER</span>
+<span class="sd">The Software is provided &quot;as is&quot; without warranty of any kind, either express or implied,</span>
+<span class="sd">including without limitation any implied warranties of condition, uninterrupted use,</span>
+<span class="sd">merchantability, fitness for a particular purpose, or non-infringement.</span>
+<span class="sd">======================================================================================</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="c1"># -----------------------------------------------------------------------------</span>
+<span class="c1"># IMPORTS</span>
+
+<span class="c1"># Standard library imports</span>
+
+<span class="c1"># Related third party imports</span>
+
+<span class="c1"># Local application/library specific imports</span>
+<span class="kn">from</span> <span class="nn">py_vollib.black_scholes</span> <span class="k">import</span> <span class="n">black_scholes</span>
+<span class="kn">from</span> <span class="nn">py_vollib.helpers.numerical_greeks</span> <span class="k">import</span> <span class="n">delta</span> <span class="k">as</span> <span class="n">numerical_delta</span>
+<span class="kn">from</span> <span class="nn">py_vollib.helpers.numerical_greeks</span> <span class="k">import</span> <span class="n">vega</span> <span class="k">as</span> <span class="n">numerical_vega</span>
+<span class="kn">from</span> <span class="nn">py_vollib.helpers.numerical_greeks</span> <span class="k">import</span> <span class="n">theta</span> <span class="k">as</span> <span class="n">numerical_theta</span>
+<span class="kn">from</span> <span class="nn">py_vollib.helpers.numerical_greeks</span> <span class="k">import</span> <span class="n">rho</span> <span class="k">as</span> <span class="n">numerical_rho</span>
+<span class="kn">from</span> <span class="nn">py_vollib.helpers.numerical_greeks</span> <span class="k">import</span> <span class="n">gamma</span> <span class="k">as</span> <span class="n">numerical_gamma</span>
+<span class="kn">from</span> <span class="nn">py_vollib.black_scholes.greeks.analytical</span> <span class="k">import</span> <span class="n">gamma</span> <span class="k">as</span> <span class="n">agamma</span>
+<span class="kn">from</span> <span class="nn">py_vollib.black_scholes.greeks.analytical</span> <span class="k">import</span> <span class="n">delta</span> <span class="k">as</span> <span class="n">adelta</span>
+<span class="kn">from</span> <span class="nn">py_vollib.black_scholes.greeks.analytical</span> <span class="k">import</span> <span class="n">vega</span> <span class="k">as</span> <span class="n">avega</span>
+<span class="kn">from</span> <span class="nn">py_vollib.black_scholes.greeks.analytical</span> <span class="k">import</span> <span class="n">rho</span> <span class="k">as</span> <span class="n">arho</span>
+<span class="kn">from</span> <span class="nn">py_vollib.black_scholes.greeks.analytical</span> <span class="k">import</span> <span class="n">theta</span> <span class="k">as</span> <span class="n">atheta</span>
+
+
+<span class="c1"># -----------------------------------------------------------------------------</span>
+<span class="c1"># FUNCTIONS - NUMERICAL GREEK CALCULATION</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">black_scholes</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="delta"><a class="viewcode-back" href="../../../../apidoc/py_vollib.black_scholes.greeks.html#py_vollib.black_scholes.greeks.numerical.delta">[docs]</a><span class="k">def</span> <span class="nf">delta</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return Black-Scholes delta of an option.</span>
+<span class="sd">    </span>
+<span class="sd">    :param S: underlying asset price</span>
+<span class="sd">    :type S: float</span>
+<span class="sd">    :param K: strike price</span>
+<span class="sd">    :type K: float</span>
+<span class="sd">    :param sigma: annualized standard deviation, or volatility</span>
+<span class="sd">    :type sigma: float</span>
+<span class="sd">    :param t: time to expiration in years</span>
+<span class="sd">    :type t: float</span>
+<span class="sd">    :param r: risk-free interest rate</span>
+<span class="sd">    :type r: float</span>
+<span class="sd">    :param flag: &#39;c&#39; or &#39;p&#39; for call or put.</span>
+<span class="sd">    :type flag: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">b</span> <span class="o">=</span> <span class="n">r</span>
+
+    <span class="k">return</span> <span class="n">numerical_delta</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="theta"><a class="viewcode-back" href="../../../../apidoc/py_vollib.black_scholes.greeks.html#py_vollib.black_scholes.greeks.numerical.theta">[docs]</a><span class="k">def</span> <span class="nf">theta</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return Black-Scholes theta of an option.</span>
+
+<span class="sd">    :param S: underlying asset price</span>
+<span class="sd">    :type S: float</span>
+<span class="sd">    :param K: strike price</span>
+<span class="sd">    :type K: float</span>
+<span class="sd">    :param sigma: annualized standard deviation, or volatility</span>
+<span class="sd">    :type sigma: float</span>
+<span class="sd">    :param t: time to expiration in years</span>
+<span class="sd">    :type t: float</span>
+<span class="sd">    :param r: risk-free interest rate</span>
+<span class="sd">    :type r: float</span>
+<span class="sd">    :param flag: &#39;c&#39; or &#39;p&#39; for call or put.</span>
+<span class="sd">    :type flag: str      </span>
+
+<span class="sd">    &quot;&quot;&quot;</span>    
+    
+    <span class="n">b</span> <span class="o">=</span> <span class="n">r</span>
+
+    <span class="k">return</span> <span class="n">numerical_theta</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="vega"><a class="viewcode-back" href="../../../../apidoc/py_vollib.black_scholes.greeks.html#py_vollib.black_scholes.greeks.numerical.vega">[docs]</a><span class="k">def</span> <span class="nf">vega</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return Black-Scholes vega of an option.</span>
+
+<span class="sd">    :param S: underlying asset price</span>
+<span class="sd">    :type S: float</span>
+<span class="sd">    :param K: strike price</span>
+<span class="sd">    :type K: float</span>
+<span class="sd">    :param sigma: annualized standard deviation, or volatility</span>
+<span class="sd">    :type sigma: float</span>
+<span class="sd">    :param t: time to expiration in years</span>
+<span class="sd">    :type t: float</span>
+<span class="sd">    :param r: risk-free interest rate</span>
+<span class="sd">    :type r: float</span>
+<span class="sd">    :param flag: &#39;c&#39; or &#39;p&#39; for call or put.</span>
+<span class="sd">    :type flag: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">b</span> <span class="o">=</span> <span class="n">r</span>
+
+    <span class="k">return</span> <span class="n">numerical_vega</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="rho"><a class="viewcode-back" href="../../../../apidoc/py_vollib.black_scholes.greeks.html#py_vollib.black_scholes.greeks.numerical.rho">[docs]</a><span class="k">def</span> <span class="nf">rho</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return Black-Scholes rho of an option.</span>
+
+<span class="sd">    :param S: underlying asset price</span>
+<span class="sd">    :type S: float</span>
+<span class="sd">    :param K: strike price</span>
+<span class="sd">    :type K: float</span>
+<span class="sd">    :param sigma: annualized standard deviation, or volatility</span>
+<span class="sd">    :type sigma: float</span>
+<span class="sd">    :param t: time to expiration in years</span>
+<span class="sd">    :type t: float</span>
+<span class="sd">    :param r: risk-free interest rate</span>
+<span class="sd">    :type r: float</span>
+<span class="sd">    :param flag: &#39;c&#39; or &#39;p&#39; for call or put.</span>
+<span class="sd">    :type flag: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    
+    <span class="n">b</span> <span class="o">=</span> <span class="n">r</span>
+
+    <span class="k">return</span> <span class="n">numerical_rho</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="gamma"><a class="viewcode-back" href="../../../../apidoc/py_vollib.black_scholes.greeks.html#py_vollib.black_scholes.greeks.numerical.gamma">[docs]</a><span class="k">def</span> <span class="nf">gamma</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return Black-Scholes gamma of an option.</span>
+
+<span class="sd">    :param S: underlying asset price</span>
+<span class="sd">    :type S: float</span>
+<span class="sd">    :param K: strike price</span>
+<span class="sd">    :type K: float</span>
+<span class="sd">    :param sigma: annualized standard deviation, or volatility</span>
+<span class="sd">    :type sigma: float</span>
+<span class="sd">    :param t: time to expiration in years</span>
+<span class="sd">    :type t: float</span>
+<span class="sd">    :param r: risk-free interest rate</span>
+<span class="sd">    :type r: float</span>
+<span class="sd">    :param flag: &#39;c&#39; or &#39;p&#39; for call or put.</span>
+<span class="sd">    :type flag: str</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">b</span> <span class="o">=</span> <span class="n">r</span>
+
+    <span class="k">return</span> <span class="n">numerical_gamma</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="test"><a class="viewcode-back" href="../../../../apidoc/py_vollib.black_scholes.greeks.html#py_vollib.black_scholes.greeks.numerical.test">[docs]</a><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Test by comparing analytical and numerical values.</span>
+
+<span class="sd">    &gt;&gt;&gt; flag=&#39;c&#39; </span>
+<span class="sd">    &gt;&gt;&gt; S=1000.0 </span>
+<span class="sd">    &gt;&gt;&gt; K=1000.0 </span>
+<span class="sd">    &gt;&gt;&gt; t=0.1 </span>
+<span class="sd">    &gt;&gt;&gt; r=0.05 </span>
+<span class="sd">    &gt;&gt;&gt; sigma=0.3</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; epsilon = 0.01</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; v1 = delta(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; v2 = adelta(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; abs(v1-v2)&lt;epsilon</span>
+<span class="sd">    True</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; v1 = gamma(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; v2 = agamma(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; abs(v1-v2)&lt;epsilon</span>
+<span class="sd">    True</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; v1 = rho(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; v2 = arho(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; abs(v1-v2)&lt;epsilon</span>
+<span class="sd">    True</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; v1 = vega(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; v2 = avega(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; abs(v1-v2)&lt;epsilon</span>
+<span class="sd">    True</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; v1 = theta(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; v2 = atheta(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; abs(v1-v2)&lt;epsilon</span>
+<span class="sd">    True</span>
+
+<span class="sd">    Test PUT flag</span>
+
+<span class="sd">    &gt;&gt;&gt; flag = &#39;p&#39;</span>
+
+<span class="sd">    &gt;&gt;&gt; v1 = delta(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; v2 = adelta(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; abs(v1-v2)&lt;epsilon</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &gt;&gt;&gt; v1 = gamma(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; v2 = agamma(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; abs(v1-v2)&lt;epsilon</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &gt;&gt;&gt; v1 = rho(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; v2 = arho(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; abs(v1-v2)&lt;epsilon</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &gt;&gt;&gt; v1 = vega(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; v2 = avega(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; abs(v1-v2)&lt;epsilon</span>
+<span class="sd">    True</span>
+
+<span class="sd">    &gt;&gt;&gt; v1 = theta(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; v2 = atheta(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; abs(v1-v2)&lt;epsilon</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="hull_book_tests"><a class="viewcode-back" href="../../../../apidoc/py_vollib.black_scholes.greeks.html#py_vollib.black_scholes.greeks.numerical.hull_book_tests">[docs]</a><span class="k">def</span> <span class="nf">hull_book_tests</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Example 17.1, page 355, Hull:</span>
+
+<span class="sd">    &gt;&gt;&gt; S = 49</span>
+<span class="sd">    &gt;&gt;&gt; K = 50 </span>
+<span class="sd">    &gt;&gt;&gt; r = .05</span>
+<span class="sd">    &gt;&gt;&gt; t = 0.3846</span>
+<span class="sd">    &gt;&gt;&gt; sigma = 0.2</span>
+<span class="sd">    &gt;&gt;&gt; flag = &#39;c&#39;</span>
+<span class="sd">    &gt;&gt;&gt; delta_calc = delta(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; # 0.521601633972</span>
+<span class="sd">    &gt;&gt;&gt; delta_text_book = 0.522</span>
+<span class="sd">    &gt;&gt;&gt; abs(delta_calc - delta_text_book) &lt; .01</span>
+<span class="sd">    True</span>
+
+<span class="sd">    Example 17.2, page 359, Hull:</span>
+
+<span class="sd">    &gt;&gt;&gt; S = 49</span>
+<span class="sd">    &gt;&gt;&gt; K = 50 </span>
+<span class="sd">    &gt;&gt;&gt; r = .05</span>
+<span class="sd">    &gt;&gt;&gt; t = 0.3846</span>
+<span class="sd">    &gt;&gt;&gt; sigma = 0.2</span>
+<span class="sd">    &gt;&gt;&gt; flag = &#39;c&#39;</span>
+<span class="sd">    &gt;&gt;&gt; annual_theta_calc = theta(flag, S, K, t, r, sigma) * 365</span>
+<span class="sd">    &gt;&gt;&gt; # -4.30538996455</span>
+<span class="sd">    &gt;&gt;&gt; annual_theta_text_book = -4.31</span>
+<span class="sd">    &gt;&gt;&gt; abs(annual_theta_calc - annual_theta_text_book) &lt; .01</span>
+<span class="sd">    True</span>
+
+<span class="sd">    Example 17.4, page 364, Hull:</span>
+
+<span class="sd">    &gt;&gt;&gt; S = 49</span>
+<span class="sd">    &gt;&gt;&gt; K = 50 </span>
+<span class="sd">    &gt;&gt;&gt; r = .05</span>
+<span class="sd">    &gt;&gt;&gt; t = 0.3846</span>
+<span class="sd">    &gt;&gt;&gt; sigma = 0.2</span>
+<span class="sd">    &gt;&gt;&gt; flag = &#39;c&#39;</span>
+<span class="sd">    &gt;&gt;&gt; gamma_calc = gamma(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; # 0.0655453772525</span>
+<span class="sd">    &gt;&gt;&gt; gamma_text_book = 0.066</span>
+<span class="sd">    &gt;&gt;&gt; abs(gamma_calc - gamma_text_book) &lt; .001</span>
+<span class="sd">    True</span>
+
+<span class="sd">    Example 17.6, page 367, Hull:</span>
+<span class="sd">    </span>
+<span class="sd">    &gt;&gt;&gt; S = 49</span>
+<span class="sd">    &gt;&gt;&gt; K = 50 </span>
+<span class="sd">    &gt;&gt;&gt; r = .05</span>
+<span class="sd">    &gt;&gt;&gt; t = 0.3846</span>
+<span class="sd">    &gt;&gt;&gt; sigma = 0.2</span>
+<span class="sd">    &gt;&gt;&gt; flag = &#39;c&#39;</span>
+<span class="sd">    &gt;&gt;&gt; vega_calc = vega(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; # 0.121052427542</span>
+<span class="sd">    &gt;&gt;&gt; vega_text_book = 0.121</span>
+<span class="sd">    &gt;&gt;&gt; abs(vega_calc - vega_text_book) &lt; .01</span>
+<span class="sd">    True</span>
+
+<span class="sd">    Example 17.7, page 368, Hull:</span>
+
+<span class="sd">    &gt;&gt;&gt; S = 49</span>
+<span class="sd">    &gt;&gt;&gt; K = 50 </span>
+<span class="sd">    &gt;&gt;&gt; r = .05</span>
+<span class="sd">    &gt;&gt;&gt; t = 0.3846</span>
+<span class="sd">    &gt;&gt;&gt; sigma = 0.2</span>
+<span class="sd">    &gt;&gt;&gt; flag = &#39;c&#39;</span>
+<span class="sd">    &gt;&gt;&gt; rho_calc = rho(flag, S, K, t, r, sigma)</span>
+<span class="sd">    &gt;&gt;&gt; # 0.089065740988</span>
+<span class="sd">    &gt;&gt;&gt; rho_text_book = 0.0891</span>
+<span class="sd">    &gt;&gt;&gt; abs(rho_calc - rho_text_book) &lt; .0001</span>
+<span class="sd">    True</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">py_vollib.helpers.doctest_helper</span> <span class="k">import</span> <span class="n">run_doctest</span>
+    <span class="n">run_doctest</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Gammon Capital LLC..
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
