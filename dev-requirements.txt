@@ -1,0 +1,11 @@
+# for documentation
+sphinx==1.5.5
+sphinx_rtd_theme==0.2.4
+recommonmark==0.4.0
+
+# for testing
+pytest==3.0.7
+
+# for experiments
+matplotlib==2.0.0
+jupyter==1.0.0
