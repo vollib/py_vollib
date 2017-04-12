@@ -171,24 +171,63 @@ Black, Black-Scholes, and Black-Scholes-Merton. <code class="docutils literal"><
 implements both analytical and numerical greeks for each of the three pricing formulae.</p>
 <div class="section" id="about-the-initial-release">
 <h2>About the initial release<a class="headerlink" href="#about-the-initial-release" title="Permalink to this headline">¶</a></h2>
-<p>This is the initial release of <code class="docutils literal"><span class="pre">py_vollib</span></code>.  Tests and documentation are still incomplete.</p>
+<p>This is the initial release of <code class="docutils literal"><span class="pre">py_vollib</span></code>.</p>
+</div>
+<div class="section" id="about-the-reference-implementation">
+<h2>About the reference implementation<a class="headerlink" href="#about-the-reference-implementation" title="Permalink to this headline">¶</a></h2>
+<p><strong>py_vollib.ref_python is a pure python version of py_vollib without any dependence on LetsBeRational. It is provided purely as a reference implementation for sanity checking. It is not recommended for industrial use.</strong></p>
 </div>
 <div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">py_vollib</span></code> is Python 2.7/Python 3.6 compatible. It depends on the <code class="docutils literal"><span class="pre">`py_lets_be_rational`</span></code> package, pure python implementation of Peter Jäckel&#8217;s original C source code.</p>
+<p><code class="docutils literal"><span class="pre">py_vollib</span></code> is Python 2.7/Python 3.6 compatible. It depends on the <code class="docutils literal"><span class="pre">py_lets_be_rational</span></code> package, pure python implementation of Peter Jäckel&#8217;s original C source code.</p>
 <p>To install via pip, type the following:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pip</span> <span class="n">install</span> <span class="n">py_vollib</span>
 </pre></div>
 </div>
 <p>Installing <code class="docutils literal"><span class="pre">py_vollib</span></code> via pip will automatically install the necessary dependencies,
-except for pip, and Python.  This has been tested to work on Windows, Linux and Macintosh OS X.</p>
-<p>Python, and pip must be installed prior to installing <code class="docutils literal"><span class="pre">`py_vollib`</span></code>.</p>
+except for pip, and Python.</p>
+<p>Python, and pip must be installed prior to installing <code class="docutils literal"><span class="pre">py_vollib</span></code>.</p>
 <p><code class="docutils literal"><span class="pre">py_lets_be_rational</span></code> is quite stable compared to <code class="docutils literal"><span class="pre">py_vollib</span></code>, which is likely to be updated frequently.</p>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="problem-oserror-dlopen-libllvmlite-dylib-6-image-not-found">
+<h3>Problem: <code class="docutils literal"><span class="pre">OSError:</span> <span class="pre">dlopen(libllvmlite.dylib,</span> <span class="pre">6):</span> <span class="pre">image</span> <span class="pre">not</span> <span class="pre">found</span></code><a class="headerlink" href="#problem-oserror-dlopen-libllvmlite-dylib-6-image-not-found" title="Permalink to this headline">¶</a></h3>
+<p>This is a MacOS specific error. Take a look at <code class="docutils literal"><span class="pre">py_vollib</span></code>&#8216;s dependency graph from this point of view:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">py_vollib</span>
+    <span class="o">|</span><span class="n">_</span> <span class="n">py_lets_be_rational</span>
+        <span class="o">|</span><span class="n">_</span> <span class="n">numba</span>
+            <span class="o">|</span><span class="n">_</span> <span class="n">llvmlite</span>
+                <span class="o">|</span><span class="n">_</span> <span class="n">LLVM</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">numba</span></code> version 0.31.0 (current version) doesn&#8217;t specify <code class="docutils literal"><span class="pre">llvmlite</span></code> version in its dependencies.</li>
+<li><code class="docutils literal"><span class="pre">llvmlite</span></code> 0.17.0 (current version) depends on LLVM 4.0.</li>
+<li>You can install LLVM version 4.0 using the <code class="docutils literal"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">llvm</span></code> command.</li>
+<li>You can install <code class="docutils literal"><span class="pre">llvmlite</span></code> version 0.17.0 using the
+<code class="docutils literal"><span class="pre">LLVM_CONFIG=/usr/local/opt/llvm/bin/llvm-config</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">llvmlite</span></code> command.</li>
+<li>Installing <code class="docutils literal"><span class="pre">llvmlite</span></code> version 0.17.0 seems to be not working:
+<code class="docutils literal"><span class="pre">OSError:</span> <span class="pre">dlopen(libllvmlite.dylib,</span> <span class="pre">6):</span> <span class="pre">image</span> <span class="pre">not</span> <span class="pre">found</span></code></li>
+<li><code class="docutils literal"><span class="pre">llvmlite</span></code> 0.16.0 depends on LLVM 3.9.</li>
+<li>You can install LLVM version 3.9 using the <code class="docutils literal"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">llvm&#64;3.9</span></code> command.</li>
+<li>You can install <code class="docutils literal"><span class="pre">llvmlite</span></code> version 0.16.0 using the
+<code class="docutils literal"><span class="pre">LLVM_CONFIG=/usr/local/opt/llvm&#64;3.9/bin/llvm-config</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">llvmlite==0.16.0</span></code> command.</li>
+</ul>
+</div>
+<div class="section" id="solution">
+<h3>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">llvm</span><span class="nd">@3</span><span class="o">.</span><span class="mi">9</span>
+<span class="n">LLVM_CONFIG</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">llvm</span><span class="nd">@3</span><span class="o">.</span><span class="mi">9</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">llvm</span><span class="o">-</span><span class="n">config</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">llvmlite</span><span class="o">==</span><span class="mf">0.16</span><span class="o">.</span><span class="mi">0</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">py_vollib</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="about-let-s-be-rational">
 <h2>About &#8220;Let&#8217;s be Rational&#8221;:<a class="headerlink" href="#about-let-s-be-rational" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="http://www.pjaeckel.webspace.virginmedia.com/LetsBeRational.pdf">&#8220;Let&#8217;s Be Rational&#8221;</a> is a paper by <a class="reference external" href="http://jaeckel.org">Peter Jäckel</a> showing <em>&#8220;how Black&#8217;s volatility can be implied from option prices with as little as two iterations to maximum attainable precision on standard (64 bit floating point) hardware for all possible inputs.&#8221;</em></p>
-<p>The paper is accompanied by the full C source code, which resides at [www.jaeckel.org/LetsBeRational.7z](www.jaeckel.org/LetsBeRational.7z).</p>
+<p>The paper is accompanied by the full C source code, which resides at <a class="reference external" href="www.jaeckel.org/LetsBeRational.7z">www.jaeckel.org/LetsBeRational.7z</a>.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>Copyright © 2013-2014 Peter Jäckel.
 
 Permission to use, copy, modify, and distribute this software is freely granted,
@@ -214,10 +253,12 @@ merchantability, fitness for a particular purpose, or non-infringement.
 </div>
 <div class="section" id="development">
 <h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
+<p>Fork the GitHub repository. This will make it available under your username e.g. <code class="docutils literal"><span class="pre">https://github.com/YOUR-USERNAME/py_vollib</span></code>.
+Clone that repo on your computer, change the code as you wish. Commit and push it, and create a pull request. That&#8217;s all.</p>
 <div class="section" id="generate-documentation">
 <h3>Generate documentation<a class="headerlink" href="#generate-documentation" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">docs</span>
-<span class="n">sphinx</span><span class="o">-</span><span class="n">apidoc</span> <span class="o">-</span><span class="n">of</span> <span class="n">apidoc</span> <span class="o">../</span><span class="n">py_vollib</span>
+<span class="n">sphinx</span><span class="o">-</span><span class="n">apidoc</span> <span class="o">-</span><span class="n">f</span> <span class="o">-</span><span class="n">o</span> <span class="n">apidoc</span> <span class="o">../</span><span class="n">py_vollib</span>
 <span class="n">make</span> <span class="n">html</span>
 </pre></div>
 </div>

@@ -17,17 +17,21 @@ About LetsBeRational:
 
 The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .
 
-======================================================================================
-Copyright © 2013-2014 Peter Jäckel.
+::
 
-Permission to use, copy, modify, and distribute this software is freely granted,
-provided that this notice is preserved.
+    ========================================================================================
+    Copyright © 2013-2014 Peter Jäckel.
 
-WARRANTY DISCLAIMER
-The Software is provided "as is" without warranty of any kind, either express or implied,
-including without limitation any implied warranties of condition, uninterrupted use,
-merchantability, fitness for a particular purpose, or non-infringement.
-======================================================================================
+    Permission to use, copy, modify, and distribute this software is freely granted,
+    provided that this notice is preserved.
+
+    WARRANTY DISCLAIMER
+    The Software is provided "as is" without warranty of any kind, either express or implied,
+    including without limitation any implied warranties of condition, uninterrupted use,
+    merchantability, fitness for a particular purpose, or non-infringement.
+    ========================================================================================
+
+
 """
 
 
@@ -79,22 +83,31 @@ def CND(x):
 
 
 def CBND(x, y, rho):
-    '''
-    '     A function for computing bivariate normal probabilities.
-    '
-    '       Alan Genz
-    '       Department of Mathematics
-    '       Washington State University
-    '       Pullman, WA 99164-3113
-    '       Email : alangenz@wsu.edu
-    '
-    '    This function is based on the method described by
-    '        Drezner, Z and G.O. Wesolowsky, (1990),
-    '        On the computation of the bivariate normal integral,
-    '        Journal of Statist. Comput. Simul. 35, pp. 101-107,
-    '    with major modifications for double precision, and for |R| close to 1.
-    '   This code was originally transelated into VBA by Graeme West
-    '''
+    """
+    A function for computing bivariate normal probabilities.
+    
+    ::
+    
+        Alan Genz
+        Department of Mathematics
+        Washington State University
+        Pullman, WA 99164-3113
+        Email : alangenz@wsu.edu
+    
+    
+    This function is based on the method described by
+    
+    ::
+    
+        Drezner, Z and G.O. Wesolowsky, (1990),
+        On the computation of the bivariate normal integral,
+        Journal of Statist. Comput. Simul. 35, pp. 101-107,
+    
+    
+    with major modifications for double precision, and for ``|R|`` close to 1.
+    This code was originally transelated into VBA by Graeme West
+    
+    """
 
     W  = numpy.zeros((11,4))
     XX = numpy.zeros((11,4))

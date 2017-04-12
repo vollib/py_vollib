@@ -12,20 +12,7 @@ described below.
 :copyright: © 2017 Gammon Capital LLC
 :license: MIT, see LICENSE for more details.
 
-About LetsBeRational:
-~~~~~~~~~~~~~~~~~~~~~
+py_vollib.ref_python is a pure python version of py_vollib without any dependence on LetsBeRational. It is provided purely as a reference implementation for sanity checking. It is not recommended for industrial use.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .
-
-======================================================================================
-Copyright © 2013-2014 Peter Jäckel.
-
-Permission to use, copy, modify, and distribute this software is freely granted,
-provided that this notice is preserved.
-
-WARRANTY DISCLAIMER
-The Software is provided "as is" without warranty of any kind, either express or implied,
-including without limitation any implied warranties of condition, uninterrupted use,
-merchantability, fitness for a particular purpose, or non-infringement.
-======================================================================================
 """

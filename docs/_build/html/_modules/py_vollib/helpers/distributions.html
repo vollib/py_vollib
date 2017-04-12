@@ -181,17 +181,21 @@
 
 <span class="sd">The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .</span>
 
-<span class="sd">======================================================================================</span>
-<span class="sd">Copyright © 2013-2014 Peter Jäckel.</span>
+<span class="sd">::</span>
 
-<span class="sd">Permission to use, copy, modify, and distribute this software is freely granted,</span>
-<span class="sd">provided that this notice is preserved.</span>
+<span class="sd">    ========================================================================================</span>
+<span class="sd">    Copyright © 2013-2014 Peter Jäckel.</span>
 
-<span class="sd">WARRANTY DISCLAIMER</span>
-<span class="sd">The Software is provided &quot;as is&quot; without warranty of any kind, either express or implied,</span>
-<span class="sd">including without limitation any implied warranties of condition, uninterrupted use,</span>
-<span class="sd">merchantability, fitness for a particular purpose, or non-infringement.</span>
-<span class="sd">======================================================================================</span>
+<span class="sd">    Permission to use, copy, modify, and distribute this software is freely granted,</span>
+<span class="sd">    provided that this notice is preserved.</span>
+
+<span class="sd">    WARRANTY DISCLAIMER</span>
+<span class="sd">    The Software is provided &quot;as is&quot; without warranty of any kind, either express or implied,</span>
+<span class="sd">    including without limitation any implied warranties of condition, uninterrupted use,</span>
+<span class="sd">    merchantability, fitness for a particular purpose, or non-infringement.</span>
+<span class="sd">    ========================================================================================</span>
+
+
 <span class="sd">&quot;&quot;&quot;</span>
 
 
@@ -243,22 +247,31 @@
 
 
 <div class="viewcode-block" id="CBND"><a class="viewcode-back" href="../../../apidoc/py_vollib.helpers.html#py_vollib.helpers.distributions.CBND">[docs]</a><span class="k">def</span> <span class="nf">CBND</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    &#39;     A function for computing bivariate normal probabilities.</span>
-<span class="sd">    &#39;</span>
-<span class="sd">    &#39;       Alan Genz</span>
-<span class="sd">    &#39;       Department of Mathematics</span>
-<span class="sd">    &#39;       Washington State University</span>
-<span class="sd">    &#39;       Pullman, WA 99164-3113</span>
-<span class="sd">    &#39;       Email : alangenz@wsu.edu</span>
-<span class="sd">    &#39;</span>
-<span class="sd">    &#39;    This function is based on the method described by</span>
-<span class="sd">    &#39;        Drezner, Z and G.O. Wesolowsky, (1990),</span>
-<span class="sd">    &#39;        On the computation of the bivariate normal integral,</span>
-<span class="sd">    &#39;        Journal of Statist. Comput. Simul. 35, pp. 101-107,</span>
-<span class="sd">    &#39;    with major modifications for double precision, and for |R| close to 1.</span>
-<span class="sd">    &#39;   This code was originally transelated into VBA by Graeme West</span>
-<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A function for computing bivariate normal probabilities.</span>
+<span class="sd">    </span>
+<span class="sd">    ::</span>
+<span class="sd">    </span>
+<span class="sd">        Alan Genz</span>
+<span class="sd">        Department of Mathematics</span>
+<span class="sd">        Washington State University</span>
+<span class="sd">        Pullman, WA 99164-3113</span>
+<span class="sd">        Email : alangenz@wsu.edu</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    This function is based on the method described by</span>
+<span class="sd">    </span>
+<span class="sd">    ::</span>
+<span class="sd">    </span>
+<span class="sd">        Drezner, Z and G.O. Wesolowsky, (1990),</span>
+<span class="sd">        On the computation of the bivariate normal integral,</span>
+<span class="sd">        Journal of Statist. Comput. Simul. 35, pp. 101-107,</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    with major modifications for double precision, and for ``|R|`` close to 1.</span>
+<span class="sd">    This code was originally transelated into VBA by Graeme West</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">W</span>  <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">11</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
     <span class="n">XX</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">11</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>

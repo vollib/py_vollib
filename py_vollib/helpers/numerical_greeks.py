@@ -16,41 +16,46 @@ About LetsBeRational:
 
 The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .
 
-======================================================================================
-Copyright © 2013-2014 Peter Jäckel.
+::
 
-Permission to use, copy, modify, and distribute this software is freely granted,
-provided that this notice is preserved.
+    ========================================================================================
+    Copyright © 2013-2014 Peter Jäckel.
 
-WARRANTY DISCLAIMER
-The Software is provided "as is" without warranty of any kind, either express or implied,
-including without limitation any implied warranties of condition, uninterrupted use,
-merchantability, fitness for a particular purpose, or non-infringement.
-======================================================================================
+    Permission to use, copy, modify, and distribute this software is freely granted,
+    provided that this notice is preserved.
+
+    WARRANTY DISCLAIMER
+    The Software is provided "as is" without warranty of any kind, either express or implied,
+    including without limitation any implied warranties of condition, uninterrupted use,
+    merchantability, fitness for a particular purpose, or non-infringement.
+    ========================================================================================
+
 
 Note about the parameter "b":
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
-======================================================================================
-from Espen Gaarder Haug's
-"The Complete Guide to Option Pricing Formulas," Second Edition,
-page 90.
+    ======================================================================================
+    from Espen Gaarder Haug's
+    "The Complete Guide to Option Pricing Formulas," Second Edition,
+    page 90.
+    
+    +-----------+------------------------------------------------------+
+    | b = r     |  gives the Black and Scholes (1973) stock option     |
+    |           |  model                                               |
+    +-----------+------------------------------------------------------+
+    | b = r -q  |  gives the Merton (1973) stock option model with     |
+    |           |  continuous dividend yield q                         |
+    +-----------+------------------------------------------------------+
+    | b = 0     |  gives the Black (1976) futures option model         |
+    +-----------+------------------------------------------------------+
+    | b = 0 and |  gives the Asay (1982) margined futures option model |
+    | r = 0     |                                                      |
+    +-----------+------------------------------------------------------+
+    ======================================================================================
 
-+-----------+------------------------------------------------------+
-| b = r     |  gives the Black and Scholes (1973) stock option     |
-|           |  model                                               |
-+-----------+------------------------------------------------------+
-| b = r -q  |  gives the Merton (1973) stock option model with     |
-|           |  continuous dividend yield q                         |
-+-----------+------------------------------------------------------+
-| b = 0     |  gives the Black (1976) futures option model         |
-+-----------+------------------------------------------------------+
-| b = 0 and |  gives the Asay (1982) margined futures option model |
-| r = 0     |                                                      |
-+-----------+------------------------------------------------------+
-======================================================================================
+
 """
 
 
