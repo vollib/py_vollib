@@ -188,41 +188,8 @@ implements both analytical and numerical greeks for each of the three pricing fo
 except for pip, and Python.</p>
 <p>Python, and pip must be installed prior to installing <code class="docutils literal"><span class="pre">py_vollib</span></code>.</p>
 <p><code class="docutils literal"><span class="pre">py_lets_be_rational</span></code> is quite stable compared to <code class="docutils literal"><span class="pre">py_vollib</span></code>, which is likely to be updated frequently.</p>
-</div>
-<div class="section" id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="problem-oserror-dlopen-libllvmlite-dylib-6-image-not-found">
-<h3>Problem: <code class="docutils literal"><span class="pre">OSError:</span> <span class="pre">dlopen(libllvmlite.dylib,</span> <span class="pre">6):</span> <span class="pre">image</span> <span class="pre">not</span> <span class="pre">found</span></code><a class="headerlink" href="#problem-oserror-dlopen-libllvmlite-dylib-6-image-not-found" title="Permalink to this headline">¶</a></h3>
-<p>This is a MacOS specific error. Take a look at <code class="docutils literal"><span class="pre">py_vollib</span></code>&#8216;s dependency graph from this point of view:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">py_vollib</span>
-    <span class="o">|</span><span class="n">_</span> <span class="n">py_lets_be_rational</span>
-        <span class="o">|</span><span class="n">_</span> <span class="n">numba</span>
-            <span class="o">|</span><span class="n">_</span> <span class="n">llvmlite</span>
-                <span class="o">|</span><span class="n">_</span> <span class="n">LLVM</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><code class="docutils literal"><span class="pre">numba</span></code> version 0.31.0 (current version) doesn&#8217;t specify <code class="docutils literal"><span class="pre">llvmlite</span></code> version in its dependencies.</li>
-<li><code class="docutils literal"><span class="pre">llvmlite</span></code> 0.17.0 (current version) depends on LLVM 4.0.</li>
-<li>You can install LLVM version 4.0 using the <code class="docutils literal"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">llvm</span></code> command.</li>
-<li>You can install <code class="docutils literal"><span class="pre">llvmlite</span></code> version 0.17.0 using the
-<code class="docutils literal"><span class="pre">LLVM_CONFIG=/usr/local/opt/llvm/bin/llvm-config</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">llvmlite</span></code> command.</li>
-<li>Installing <code class="docutils literal"><span class="pre">llvmlite</span></code> version 0.17.0 seems to be not working:
-<code class="docutils literal"><span class="pre">OSError:</span> <span class="pre">dlopen(libllvmlite.dylib,</span> <span class="pre">6):</span> <span class="pre">image</span> <span class="pre">not</span> <span class="pre">found</span></code></li>
-<li><code class="docutils literal"><span class="pre">llvmlite</span></code> 0.16.0 depends on LLVM 3.9.</li>
-<li>You can install LLVM version 3.9 using the <code class="docutils literal"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">llvm&#64;3.9</span></code> command.</li>
-<li>You can install <code class="docutils literal"><span class="pre">llvmlite</span></code> version 0.16.0 using the
-<code class="docutils literal"><span class="pre">LLVM_CONFIG=/usr/local/opt/llvm&#64;3.9/bin/llvm-config</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">llvmlite==0.16.0</span></code> command.</li>
-</ul>
-</div>
-<div class="section" id="solution">
-<h3>Solution<a class="headerlink" href="#solution" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">llvm</span><span class="nd">@3</span><span class="o">.</span><span class="mi">9</span>
-<span class="n">LLVM_CONFIG</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">llvm</span><span class="nd">@3</span><span class="o">.</span><span class="mi">9</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">llvm</span><span class="o">-</span><span class="n">config</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">llvmlite</span><span class="o">==</span><span class="mf">0.16</span><span class="o">.</span><span class="mi">0</span>
-<span class="n">pip</span> <span class="n">install</span> <span class="n">py_vollib</span>
-</pre></div>
-</div>
-</div>
+<p>If you want to be <code class="docutils literal"><span class="pre">py_lets_be_rational</span></code> - and so <code class="docutils literal"><span class="pre">py_vollib</span></code> - faster, you need to install
+<a class="reference external" href="http://numba.pydata.org/">Numba</a>, that significantly speeds up the calculations.</p>
 </div>
 <div class="section" id="about-let-s-be-rational">
 <h2>About &#8220;Let&#8217;s be Rational&#8221;:<a class="headerlink" href="#about-let-s-be-rational" title="Permalink to this headline">¶</a></h2>

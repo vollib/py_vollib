@@ -39,43 +39,8 @@ Python, and pip must be installed prior to installing ``py_vollib``.
 
 ``py_lets_be_rational`` is quite stable compared to ``py_vollib``, which is likely to be updated frequently.
 
-Troubleshooting
----------------
-
-Problem: ``OSError: dlopen(libllvmlite.dylib, 6): image not found``
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-This is a MacOS specific error. Take a look at ``py_vollib``'s dependency graph from this point of view:
-
-::
-
-    py_vollib
-        |_ py_lets_be_rational
-            |_ numba
-                |_ llvmlite
-                    |_ LLVM
-
-
-- ``numba`` version 0.31.0 (current version) doesn't specify ``llvmlite`` version in its dependencies.
-- ``llvmlite`` 0.17.0 (current version) depends on LLVM 4.0.
-- You can install LLVM version 4.0 using the ``brew install llvm`` command.
-- You can install ``llvmlite`` version 0.17.0 using the
-  ``LLVM_CONFIG=/usr/local/opt/llvm/bin/llvm-config pip install -U llvmlite`` command.
-- Installing ``llvmlite`` version 0.17.0 seems to be not working:
-  ``OSError: dlopen(libllvmlite.dylib, 6): image not found``
-- ``llvmlite`` 0.16.0 depends on LLVM 3.9.
-- You can install LLVM version 3.9 using the ``brew install llvm@3.9`` command.
-- You can install ``llvmlite`` version 0.16.0 using the
-  ``LLVM_CONFIG=/usr/local/opt/llvm@3.9/bin/llvm-config pip install -U llvmlite==0.16.0`` command.
-
-Solution
-++++++++
-
-::
-
-    brew install llvm@3.9
-    LLVM_CONFIG=/usr/local/opt/llvm@3.9/bin/llvm-config pip install -U llvmlite==0.16.0
-    pip install py_vollib
+If you want to be ``py_lets_be_rational`` - and so ``py_vollib`` - faster, you need to install
+`Numba <http://numba.pydata.org/>`_, that significantly speeds up the calculations.
 
 
 About "Let's be Rational":
