@@ -11,15 +11,15 @@ Comparison with `vollib`
 ------------------------
 
 +-------------------------------------------------+-----------------------+----------------------------+
-| Feature                                         | `py_vollib`           | `vollib`                   |
+| Feature                                         |      `py_vollib`      |         `vollib`           |
 +=================================================+=======================+============================+
-| Python Version Compatibility                    | 2.7 and 3.x           | 2.7 only                   |
+| Python Version Compatibility                    |      2.7 and 3.x      |          2.7 on            |
 +-------------------------------------------------+-----------------------+----------------------------+
-| Source Language                                 | Python                | C with Python SWIG Wrapper |
+| Source Language                                 |         Python        | C with Python SWIG Wrapper |
 +-------------------------------------------------+-----------------------+----------------------------+
-| Optional Dependencies                           | Numba                 | None                       |
+| Optional Dependencies                           |         Numba         |            None            |
 +-------------------------------------------------+-----------------------+----------------------------+
-| Core Dependency (automatically installed by pip)| `py_lets_be_rational` | `lets_be_rational`         |
+| Core Dependency (automatically installed by pip)| `py_lets_be_rational` |     `lets_be_rational`     |
 +-------------------------------------------------+-----------------------+----------------------------+
 
 Execution Speed
