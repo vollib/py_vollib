@@ -189,11 +189,11 @@ def vega(flag, F, K, t, r, sigma):
 
     ::
 
-    ==========================================================
-    Note: The text book analytical formula does not multiply by .01,
-    but in practice vega is defined as the change in price
-    for each 1 percent change in IV, hence we multiply by 0.01.
-    ==========================================================
+        ==========================================================
+        Note: The text book analytical formula does not multiply by .01,
+        but in practice vega is defined as the change in price
+        for each 1 percent change in IV, hence we multiply by 0.01.
+        ==========================================================
 
     >>> F = 49
     >>> K = 50
@@ -232,11 +232,11 @@ def rho(flag, F, K, t, r, sigma):
 
     ::
 
-    ==========================================================
-    The text book analytical formula does not multiply by .01,
-    but in practice rho is defined as the change in price
-    for each 1 percent change in r, hence we multiply by 0.01.
-    ==========================================================
+        ==========================================================
+        The text book analytical formula does not multiply by .01,
+        but in practice rho is defined as the change in price
+        for each 1 percent change in r, hence we multiply by 0.01.
+        ==========================================================
 
     >>> F = 49
     >>> K = 50
