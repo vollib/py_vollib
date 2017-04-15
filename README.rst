@@ -1,11 +1,13 @@
 About ``py_vollib``
 ===================
 
-``py_vollib`` is a python library for calculating option prices,
-implied volatility and greeks.  At its core is Peter Jäckel's
-source code for ``LetsBeRational``, an extremely fast and accurate algorithm for obtaining Black's implied volatility from option prices.
+``py_vollib`` is a python library for calculating option prices, implied volatility and greeks.  At its core is
+Peter Jäckel's source code for ``LetsBeRational``, an extremely fast and accurate algorithm for obtaining Black's
+implied volatility from option prices.
 
-Building on this solid foundation, ``py_vollib`` provides functions to calculate option prices, implied volatility and greeks using Black, Black-Scholes, and Black-Scholes-Merton. ``py_vollib`` implements both analytical and numerical greeks for each of the three pricing formulae.
+Building on this solid foundation, ``py_vollib`` provides functions to calculate option prices, implied volatility and
+greeks using Black, Black-Scholes, and Black-Scholes-Merton. ``py_vollib`` implements both analytical and numerical
+greeks for each of the three pricing formulae.
 
 Comparison with `vollib`
 ------------------------
@@ -24,23 +26,31 @@ Comparison with `vollib`
 
 Execution Speed
 ---------------
-Except for the source languages of `py_lets_be_rational` and `lets_be_rational`, `py_vollib`  and `vollib`  are almost identical.  Each is orders of magnitude faster than traditional implied volatility calculation libraries, thanks to the algorithms developed by Peter Jäckel.  However, `py_vollib`, without Numba installed, is about an order of magnitude slower than `vollib`.  Numba helps to mitigate this speed gap considerably.
+Except for the source languages of ``py_lets_be_rational`` and ``lets_be_rational``, ``py_vollib``  and ``vollib``  are
+almost identical. Each is orders of magnitude faster than traditional implied volatility calculation libraries, thanks
+to the algorithms developed by Peter Jäckel.  However, ``py_vollib``, without Numba installed, is about an order of
+magnitude slower than ``vollib``.  Numba helps to mitigate this speed gap considerably.
 
 Numba Dependency
 ----------------
 
-Numba is an optional dependency of `py_vollib` .  Because Numba installation can be tricky and OS-dependent, we decided to leave it up to each user to decide how and whether to install Numba.  If Numba is present, execution speed will be faster.  If not, the code will still run -- just slower.
+Numba is an optional dependency of ``py_vollib`` .  Because Numba installation can be tricky and OS-dependent, we
+decided to leave it up to each user to decide how and whether to install Numba.  If Numba is present, execution speed
+will be faster. If not, the code will still run -- just slower.
 
 About the reference Python implementation
 -----------------------------------------
 
-`py_vollib` contains `py_vollib.ref_python`, a pure python version of the functions in `py_vollib.*`, except without any dependency on `lets_be_rational` or `py_lets_be_rational`.  It is provided purely as a reference implementation for sanity checking. It is not recommended for serious use.
+``py_vollib`` contains ``py_vollib.ref_python``, a pure python version of the functions in ``py_vollib.*``, except
+without any dependency on ``lets_be_rational`` or ``py_lets_be_rational``.  It is provided purely as a reference
+implementation for sanity checking. It is not recommended for serious use.
 
 
 Dependencies
 ------------
 
-``py_vollib`` is Python 2.7/Python 3.6 compatible.  Its core dependency is ``py_lets_be_rational`` package, pure python implementation of Peter Jäckel's original C source code.
+``py_vollib`` is Python 2.7/Python 3.6 compatible.  Its core dependency is ``py_lets_be_rational`` package, pure
+python implementation of Peter Jäckel's original C source code.
 
 To install via pip, type the following::
 
