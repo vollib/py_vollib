@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>py_vollib.black package &mdash; py_vollib 1.0.1 documentation</title>
+  <title>py_vollib.black package &mdash; py_vollib 1.0.2 documentation</title>
   
 
   
@@ -37,7 +37,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="py_vollib 1.0.1 documentation" href="../index.html"/>
+    <link rel="top" title="py_vollib 1.0.2 documentation" href="../index.html"/>
         <link rel="up" title="py_vollib package" href="py_vollib.html"/>
         <link rel="next" title="py_vollib.black.greeks package" href="py_vollib.black.greeks.html"/>
         <link rel="prev" title="py_vollib package" href="py_vollib.html"/> 
@@ -246,7 +246,7 @@ merchantability, fitness for a particular purpose, or non-infringement.
 </div>
 <dl class="function">
 <dt id="py_vollib.black.implied_volatility.implied_volatility">
-<code class="descclassname">py_vollib.black.implied_volatility.</code><code class="descname">implied_volatility</code><span class="sig-paren">(</span><em>discounted_option_price</em>, <em>F</em>, <em>K</em>, <em>r</em>, <em>t</em>, <em>flag</em><span class="sig-paren">)</span><a class="headerlink" href="#py_vollib.black.implied_volatility.implied_volatility" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">py_vollib.black.implied_volatility.</code><code class="descname">implied_volatility</code><span class="sig-paren">(</span><em>discounted_option_price</em>, <em>F</em>, <em>K</em>, <em>r</em>, <em>t</em>, <em>flag</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/py_vollib/black/implied_volatility.html#implied_volatility"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#py_vollib.black.implied_volatility.implied_volatility" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the implied volatility of the Black option price</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -273,7 +273,7 @@ merchantability, fitness for a particular purpose, or non-infringement.
 </pre></div>
 </div>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">discounted_call_price</span> <span class="o">=</span> <span class="n">black</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">iv</span> <span class="o">=</span> <span class="n">implied_volatility_of_discounted_option_price</span><span class="p">(</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iv</span> <span class="o">=</span> <span class="n">implied_volatility</span><span class="p">(</span>
 <span class="gp">... </span><span class="n">discounted_call_price</span><span class="p">,</span> <span class="n">F</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -715,7 +715,7 @@ intrinsic must equal the put normalised price.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0.1',
+            VERSION:'1.0.2',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

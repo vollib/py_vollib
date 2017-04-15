@@ -10,7 +10,7 @@ project           = 'py_vollib'
 copyright         = '2017, Gammon Capital LLC.'
 author            = 'Gammon Capital LLC.'
 version           = '1.0'
-release           = '1.0.1'
+release           = '1.0.2'
 extensions        = ['sphinx.ext.autodoc',
                      'sphinx.ext.doctest',
                      'sphinx.ext.coverage',

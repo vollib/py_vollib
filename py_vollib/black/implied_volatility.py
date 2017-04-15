@@ -109,7 +109,43 @@ def implied_volatility_of_discounted_option_price(discounted_option_price, F, K,
     return sigma_calc
 
 
-implied_volatility = implied_volatility_of_discounted_option_price
+def implied_volatility(discounted_option_price, F, K, r, t, flag):
+    """Calculate the implied volatility of the Black option price
+
+    :param discounted_option_price: discounted Black price of a futures option
+    :type discounted_option_price: float
+    :param F: underlying futures price
+    :type F: float
+    :param K: strike price
+    :type K: float
+    :param r: the risk-free interest rate
+    :type r: float 
+    :param t: time to expiration in years
+    :type t: float
+    :param flag: 'p' or 'c' for put or call
+    :type flag: str
+
+    >>> F = 100
+    >>> K = 100
+    >>> sigma = .2
+    >>> flag = 'c'
+    >>> t = .5
+    >>> r = .02
+
+    >>> discounted_call_price = black(flag, F, K, t, r, sigma)
+    >>> iv = implied_volatility(
+    ... discounted_call_price, F, K, r, t, flag)
+
+    >>> expected_price = 5.5811067246
+    >>> expected_iv = 0.2
+
+    >>> abs(expected_price - discounted_call_price) < 0.00001
+    True
+    >>> abs(expected_iv - iv) < 0.00001
+    True
+    """
+
+    return implied_volatility_of_discounted_option_price(discounted_option_price, F, K, r, t, flag)
 
 
 # -----------------------------------------------------------------------------

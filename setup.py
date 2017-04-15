@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='py_vollib',
-    version='1.0.1',
+    version='1.0.2',
     description='',
     url='http://vollib.org',
     maintainer='vollib',
