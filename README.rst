@@ -12,17 +12,17 @@ greeks for each of the three pricing formulae.
 Comparison with `vollib`
 ------------------------
 
-+-------------------------------------------------+-----------------------+----------------------------+
-| Feature                                         |      `py_vollib`      |         `vollib`           |
-+=================================================+=======================+============================+
-| Python Version Compatibility                    |      2.7 and 3.x      |          2.7 only          |
-+-------------------------------------------------+-----------------------+----------------------------+
-| Source Language                                 |         Python        | C with Python SWIG Wrapper |
-+-------------------------------------------------+-----------------------+----------------------------+
-| Optional Dependencies                           |         Numba         |            None            |
-+-------------------------------------------------+-----------------------+----------------------------+
-| Core Dependency (automatically installed by pip)| `py_lets_be_rational` |     `lets_be_rational`     |
-+-------------------------------------------------+-----------------------+----------------------------+
++-------------------------------------------------+-------------------------+----------------------------+
+| Feature                                         |      ``py_vollib``      |        ``vollib``          |
++=================================================+=========================+============================+
+| Python Version Compatibility                    |       2.7 and 3.x       |          2.7 only          |
++-------------------------------------------------+-------------------------+----------------------------+
+| Source Language                                 |          Python         | C with Python SWIG Wrapper |
++-------------------------------------------------+-------------------------+----------------------------+
+| Optional Dependencies                           |          Numba          |            None            |
++-------------------------------------------------+-------------------------+----------------------------+
+| Core Dependency (automatically installed by pip)| ``py_lets_be_rational`` |   ``lets_be_rational``     |
++-------------------------------------------------+-------------------------+----------------------------+
 
 Execution Speed
 ---------------
@@ -37,6 +37,17 @@ Numba Dependency
 Numba is an optional dependency of ``py_vollib`` .  Because Numba installation can be tricky and OS-dependent, we
 decided to leave it up to each user to decide how and whether to install Numba.  If Numba is present, execution speed
 will be faster. If not, the code will still run -- just slower.
+
+Installing numba
+----------------
+
+``py_lets_be_rational`` optionally depends on ``numba`` which in turn depends on ``llvm-lite``. ``llvm-lite`` wants LLVM 3.9
+being installed. On Mac OSX, use the latest version of HomeBrew to install ``numba``'s dependencies as shown below::
+
+    brew install llvm@3.9
+    LLVM_CONFIG=/usr/local/opt/llvm@3.9/bin/llvm-config pip install llvmlite==0.16.0
+    pip install numba==0.31.0
+
 
 About the reference Python implementation
 -----------------------------------------
@@ -54,7 +65,7 @@ python implementation of Peter Jäckel's original C source code.
 
 To install via pip, type the following::
 
-    >>> pip install py_vollib
+    pip install py_vollib
 
 Installing ``py_vollib`` via pip will automatically install the necessary dependencies,
 except for pip, and Python.
@@ -88,6 +99,9 @@ Links
   * `pip <https://pypi.python.org/pypi/pip>`_
   * `Licence <http://vollib.org/license>`_
   * `Vollib Home <http://vollib.org>`_
+  * `py_lets_be_rational <http://github.com/vollib/py_lets_be_rational>`_
+  * `lets_be_rational <http://github.com/vollib/lets_be_rational>`_
+  * `vollib <http://github.com/vollib/vollib>`_
 
 Development
 -----------
@@ -103,3 +117,4 @@ Generate documentation
     cd docs
     sphinx-apidoc -f -o apidoc ../py_vollib
     make html
+
