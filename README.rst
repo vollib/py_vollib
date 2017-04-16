@@ -38,7 +38,7 @@ Numba is an optional dependency of ``py_vollib`` .  Because Numba installation c
 decided to leave it up to each user to decide how and whether to install Numba.  If Numba is present, execution speed
 will be faster. If not, the code will still run -- just slower.
 
-Installing numba
+Installing Numba
 ----------------
 
 ``py_lets_be_rational`` optionally depends on ``numba`` which in turn depends on ``llvm-lite``. ``llvm-lite`` wants LLVM 3.9
@@ -48,6 +48,7 @@ being installed. On Mac OSX, use the latest version of HomeBrew to install ``num
     LLVM_CONFIG=/usr/local/opt/llvm@3.9/bin/llvm-config pip install llvmlite==0.16.0
     pip install numba==0.31.0
 
+For other operating systems, please refer to the ``llvm-lite`` and ``numba`` documentation.
 
 About the reference Python implementation
 -----------------------------------------
