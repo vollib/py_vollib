@@ -64,8 +64,6 @@ def implied_volatility(price, S, K, t, r, q, flag):
     :type S: float
     :param K: strike price
     :type K: float
-    :param sigma: annualized standard deviation, or volatility
-    :type sigma: float
     :param t: time to expiration in years
     :type t: float
     :param r: risk-free interest rate
@@ -77,20 +75,15 @@ def implied_volatility(price, S, K, t, r, q, flag):
 
     >>> S = 100
     >>> K = 100
-    >>> sigma = .2
     >>> r = .01
     >>> flag = 'c'
     >>> t = .5
     >>> q = 0
     
-    >>> price = black_scholes_merton(flag, S, K, t, r, sigma, q)
     >>> iv = implied_volatility(price, S, K, t, r, q, flag)
 
-    >>> expected_price = 5.87602423383
     >>> expected_iv = 0.2
     
-    >>> abs(expected_price - price) < 0.00001
-    True
     >>> abs(expected_iv - iv) < 0.00001
     True
     """
