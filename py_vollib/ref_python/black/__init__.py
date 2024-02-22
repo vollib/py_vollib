@@ -73,7 +73,7 @@ def d1(F, K, t, r, sigma):  # keep r argument for consistency
     """
 
     sd = sigma * sqrt(t)
-    return numpy.log(F / float(K)) / sd + sd / 2.0
+    return log(F / float(K)) / sd + sd / 2.0
 
 
 def d2(F, K, t, r, sigma):  # keep r argument for consistency
