@@ -23,7 +23,6 @@ py_vollib.ref_python is a pure python version of py_vollib without any dependenc
 
 # Standard library imports
 from __future__ import division
-from math import log, sqrt
 
 # Related third party imports
 import numpy
@@ -73,11 +72,8 @@ def d1(F, K, t, r, sigma):  # keep r argument for consistency
     True
     """
 
-    sigma_squared = sigma * sigma
-    numerator = log(F / float(K)) + sigma_squared * t / 2.0
-    denominator = sigma * sqrt(t)
-
-    return numerator / denominator
+    sd = sigma * sqrt(t)
+    return log(F / float(K)) / sd + sd / 2.0
 
 
 def d2(F, K, t, r, sigma):  # keep r argument for consistency
