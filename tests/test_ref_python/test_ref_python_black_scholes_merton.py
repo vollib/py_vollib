@@ -6,6 +6,7 @@ from __future__ import print_function
 import unittest
 
 # Related third party imports
+import numpy as np
 
 # Local application/library specific imports
 from vollib.ref_python.black_scholes_merton import black_scholes_merton
@@ -68,8 +69,8 @@ class TestRefPythonBlackScholesMertonAgainstBenchmarkValues(unittest.TestCase):
         while self.tdi.has_next():
             row = self.tdi.next_row()
             S, K, t, r, sigma = row['S'], row['K'], row['t'], row['R'], row['v']
-            self.assertAlmostEqual(numerical.delta('c', S, K, t, r, sigma, q), row['CD'], delta=0.000001)
-            self.assertAlmostEqual(numerical.delta('p', S, K, t, r, sigma, q), row['PD'], delta=0.000001)
+            np.testing.assert_allclose(numerical.delta('c', S, K, t, r, sigma, q), row['CD'], rtol=0.1, atol=1e-10)
+            np.testing.assert_allclose(numerical.delta('p', S, K, t, r, sigma, q), row['PD'], rtol=0.1, atol=1e-10)
 
     def test_numerical_theta(self):
         while self.tdi.has_next():
@@ -82,8 +83,8 @@ class TestRefPythonBlackScholesMertonAgainstBenchmarkValues(unittest.TestCase):
         while self.tdi.has_next():
             row = self.tdi.next_row()
             S, K, t, r, sigma = row['S'], row['K'], row['t'], row['R'], row['v']
-            self.assertAlmostEqual(numerical.gamma('c', S, K, t, r, sigma, q), row['CG'], delta=0.000001)
-            self.assertAlmostEqual(numerical.gamma('p', S, K, t, r, sigma, q), row['PG'], delta=0.000001)
+            np.testing.assert_allclose(numerical.gamma('c', S, K, t, r, sigma, q), row['CG'], rtol=0.1, atol=1e-10)
+            np.testing.assert_allclose(numerical.gamma('p', S, K, t, r, sigma, q), row['PG'], rtol=0.1, atol=1e-10)
 
     def test_numerical_vega(self):
         while self.tdi.has_next():

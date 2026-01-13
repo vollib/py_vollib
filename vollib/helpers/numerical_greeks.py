@@ -96,6 +96,9 @@ def delta(flag, S, K, t, r, sigma, b, pricing_function):
     :param pricing_function: any function returning the price of an option
     :type pricing_function: python function object
     """
+    if S == 0:
+        # For S=0: call is worthless (delta=0), put is max value (delta=-1)
+        return 0.0 if flag == 'c' else -1.0
     if t == 0.0:
         if S == K:
             return {'c':0.5, 'p':-0.5}[flag]
@@ -104,8 +107,8 @@ def delta(flag, S, K, t, r, sigma, b, pricing_function):
         else:
             return {'c':0.0, 'p':-1.0}[flag]
     else:
-        return (pricing_function(flag, S + dS, K, t, r, sigma, b) - \
-                pricing_function(flag, S - dS, K, t, r, sigma, b)) / (2 * dS)
+        return (pricing_function(flag, S * (1 + dS), K, t, r, sigma, b) - \
+                pricing_function(flag, S * (1 - dS), K, t, r, sigma, b)) / (2 * S * dS)
 
 
 def theta(flag, S, K, t, r, sigma, b, pricing_function):
@@ -208,12 +211,15 @@ def gamma(flag, S, K, t, r, sigma, b, pricing_function):
     :type pricing_function: python function object
     """
 
+    if S == 0:
+        # For S=0: gamma is 0 (no curvature in delta for deep OTM/ITM options)
+        return 0.0
     if t == 0:
         return float("inf") if S == K else 0.0
 
-    return (pricing_function(flag, S + dS, K, t, r, sigma, b) - 2. * \
+    return (pricing_function(flag, S * (1 + dS), K, t, r, sigma, b) - 2. * \
             pricing_function(flag, S, K, t, r, sigma, b) + \
-            pricing_function(flag, S - dS, K, t, r, sigma, b)) / dS ** 2.
+            pricing_function(flag, S * (1 - dS), K, t, r, sigma, b)) / (S * dS) ** 2.
 
 
 if __name__ == "__main__":
