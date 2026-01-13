@@ -1,7 +1,7 @@
-py_vollib
+vollib
 =========
 
 .. toctree::
    :maxdepth: 4
 
-   py_vollib
+   vollib

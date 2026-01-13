@@ -1,19 +1,19 @@
-About ``py_vollib``
+About ``vollib``
 ===================
 
-``py_vollib`` is a python library for calculating option prices, implied volatility and greeks.  At its core is
+``vollib`` is a python library for calculating option prices, implied volatility and greeks.  At its core is
 Peter Jäckel's source code for ``LetsBeRational``, an extremely fast and accurate algorithm for obtaining Black's
 implied volatility from option prices.
 
-Building on this solid foundation, ``py_vollib`` provides functions to calculate option prices, implied volatility and
-greeks using Black, Black-Scholes, and Black-Scholes-Merton. ``py_vollib`` implements both analytical and numerical
+Building on this solid foundation, ``vollib`` provides functions to calculate option prices, implied volatility and
+greeks using Black, Black-Scholes, and Black-Scholes-Merton. ``vollib`` implements both analytical and numerical
 greeks for each of the three pricing formulae.
 
 Comparison with `vollib`
 ------------------------
 
 +-------------------------------------------------+-------------------------+----------------------------+
-| Feature                                         |      ``py_vollib``      |        ``vollib``          |
+| Feature                                         |      ``vollib``      |        ``vollib``          |
 +=================================================+=========================+============================+
 | Python Version Compatibility                    |       2.7 and 3.x       |          2.7 only          |
 +-------------------------------------------------+-------------------------+----------------------------+
@@ -26,15 +26,15 @@ Comparison with `vollib`
 
 Execution Speed
 ---------------
-Except for the source languages of ``py_lets_be_rational`` and ``lets_be_rational``, ``py_vollib``  and ``vollib``  are
+Except for the source languages of ``py_lets_be_rational`` and ``lets_be_rational``, ``vollib``  and ``vollib``  are
 almost identical. Each is orders of magnitude faster than traditional implied volatility calculation libraries, thanks
-to the algorithms developed by Peter Jäckel.  However, ``py_vollib``, without Numba installed, is about an order of
+to the algorithms developed by Peter Jäckel.  However, ``vollib``, without Numba installed, is about an order of
 magnitude slower than ``vollib``.  Numba helps to mitigate this speed gap considerably.
 
 Numba Dependency
 ----------------
 
-Numba is an optional dependency of ``py_vollib`` .  Because Numba installation can be tricky and OS-dependent, we
+Numba is an optional dependency of ``vollib`` .  Because Numba installation can be tricky and OS-dependent, we
 decided to leave it up to each user to decide how and whether to install Numba.  If Numba is present, execution speed
 will be faster. If not, the code will still run -- just slower.
 
@@ -53,7 +53,7 @@ For other operating systems, please refer to the ``llvm-lite`` and ``numba`` doc
 About the reference Python implementation
 -----------------------------------------
 
-``py_vollib`` contains ``py_vollib.ref_python``, a pure python version of the functions in ``py_vollib.*``, except
+``vollib`` contains ``vollib.ref_python``, a pure python version of the functions in ``vollib.*``, except
 without any dependency on ``lets_be_rational`` or ``py_lets_be_rational``.  It is provided purely as a reference
 implementation for sanity checking. It is not recommended for serious use.
 
@@ -61,17 +61,17 @@ implementation for sanity checking. It is not recommended for serious use.
 Dependencies
 ------------
 
-``py_vollib`` is Python 2.7/Python 3.6 compatible.  Its core dependency is ``py_lets_be_rational`` package, pure
+``vollib`` is Python 2.7/Python 3.6 compatible.  Its core dependency is ``py_lets_be_rational`` package, pure
 python implementation of Peter Jäckel's original C source code.
 
 To install via pip, type the following::
 
-    pip install py_vollib
+    pip install vollib
 
-Installing ``py_vollib`` via pip will automatically install the necessary dependencies,
+Installing ``vollib`` via pip will automatically install the necessary dependencies,
 except for pip, and Python.
 
-Python, and pip must be installed prior to installing ``py_vollib``.
+Python, and pip must be installed prior to installing ``vollib``.
 
 
 About "Let's be Rational"
@@ -107,7 +107,7 @@ Links
 Development
 -----------
 
-Fork the GitHub repository. This will make it available under your username e.g. ``https://github.com/YOUR-USERNAME/py_vollib``.
+Fork the GitHub repository. This will make it available under your username e.g. ``https://github.com/YOUR-USERNAME/vollib``.
 Clone that repo on your computer, change the code as you wish. Commit and push it, and create a pull request. That's all.
 
 Generate documentation
@@ -116,6 +116,6 @@ Generate documentation
 ::
 
     cd docs
-    sphinx-apidoc -f -o apidoc ../py_vollib
+    sphinx-apidoc -f -o apidoc ../vollib
     make html
 

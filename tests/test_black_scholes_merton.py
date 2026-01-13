@@ -8,10 +8,10 @@ import unittest
 # Related third party imports
 
 # Local application/library specific imports
-from py_vollib.black_scholes_merton import black_scholes_merton
-from py_vollib.black_scholes_merton.implied_volatility import implied_volatility
-from py_vollib.black_scholes_merton.greeks import analytical
-from py_vollib.black_scholes_merton.greeks import numerical
+from vollib.black_scholes_merton import black_scholes_merton
+from vollib.black_scholes_merton.implied_volatility import implied_volatility
+from vollib.black_scholes_merton.greeks import analytical
+from vollib.black_scholes_merton.greeks import numerical
 from tests.test_utils import IteratorForTestData
 
 

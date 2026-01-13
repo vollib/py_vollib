@@ -7,10 +7,10 @@ import unittest
 # Related third party imports
 
 # Local application/library specific imports
-from py_vollib.black_scholes.greeks import analytical as c_analytical
-from py_vollib.black_scholes.greeks import numerical as c_numerical
-from py_vollib.ref_python.black_scholes.greeks import analytical as py_analytical
-from py_vollib.ref_python.black_scholes.greeks import numerical as py_numerical
+from vollib.black_scholes.greeks import analytical as c_analytical
+from vollib.black_scholes.greeks import numerical as c_numerical
+from vollib.ref_python.black_scholes.greeks import analytical as py_analytical
+from vollib.ref_python.black_scholes.greeks import numerical as py_numerical
 from tests.test_utils import almost_equal
 
 

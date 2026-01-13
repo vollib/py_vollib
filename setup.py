@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='py_vollib',
+    name='vollib',
     version='1.0.3',
     description='',
     url='http://vollib.org',
@@ -14,7 +14,8 @@ setup(
     maintainer_email='vollib@gammoncap.com',
     license='MIT',
     install_requires=[
-        'py_lets_be_rational',
+        'cody-special',
+        'piecewise-rational',
         'simplejson',
         'numpy',
         'pandas',

@@ -10,16 +10,16 @@ import unittest
 import numpy
 
 # Local application/library specific imports
-from py_vollib.black_scholes.greeks.analytical import delta
-from py_vollib.black_scholes.greeks.analytical import gamma
-from py_vollib.black_scholes.greeks.analytical import theta
-from py_vollib.black_scholes.greeks.analytical import vega
-from py_vollib.black_scholes.greeks.analytical import rho
-from py_vollib.black_scholes.greeks.numerical import delta as ndelta
-from py_vollib.black_scholes.greeks.numerical import gamma as ngamma
-from py_vollib.black_scholes.greeks.numerical import theta as ntheta
-from py_vollib.black_scholes.greeks.numerical import vega as nvega
-from py_vollib.black_scholes.greeks.numerical import rho as nrho
+from vollib.black_scholes.greeks.analytical import delta
+from vollib.black_scholes.greeks.analytical import gamma
+from vollib.black_scholes.greeks.analytical import theta
+from vollib.black_scholes.greeks.analytical import vega
+from vollib.black_scholes.greeks.analytical import rho
+from vollib.black_scholes.greeks.numerical import delta as ndelta
+from vollib.black_scholes.greeks.numerical import gamma as ngamma
+from vollib.black_scholes.greeks.numerical import theta as ntheta
+from vollib.black_scholes.greeks.numerical import vega as nvega
+from vollib.black_scholes.greeks.numerical import rho as nrho
 
 
 class TestBSGreeks(unittest.TestCase):

@@ -6,7 +6,7 @@ from __future__ import print_function
 import sphinx_rtd_theme
 from recommonmark.parser import CommonMarkParser
 
-project           = 'py_vollib'
+project           = 'vollib'
 copyright         = '2017, Gammon Capital LLC.'
 author            = 'Gammon Capital LLC.'
 version           = '1.0'

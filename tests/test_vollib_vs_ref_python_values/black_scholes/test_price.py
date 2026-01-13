@@ -7,8 +7,8 @@ import unittest
 # Related third party imports
 
 # Local application/library specific imports
-from py_vollib.black_scholes import black_scholes as c_black_scholes
-from py_vollib.ref_python.black_scholes import black_scholes as py_black_scholes
+from vollib.black_scholes import black_scholes as c_black_scholes
+from vollib.ref_python.black_scholes import black_scholes as py_black_scholes
 from tests.test_utils import almost_equal
 
 

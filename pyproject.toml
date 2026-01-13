@@ -1,17 +1,18 @@
 [tool.poetry]
-name = "py_vollib"
+name = "vollib"
 version = "1.0.3"
 description = "Python library for calculating option prices, implied volatility and greeks."
 authors = ["vollib <vollib@gammoncap.com>"]
 license = "MIT"
 readme = "README.rst"
 homepage = "http://vollib.org"
-repository = "https://github.com/vollib/py_vollib"
-packages = [{include = "py_vollib"}]
+repository = "https://github.com/vollib/vollib"
+packages = [{include = "vollib"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-py_lets_be_rational = {path = "../py_lets_be_rational", develop = true}
+cody-special = "^1.0.0"
+piecewise-rational = "^1.0.0"
 simplejson = "^3.0"
 numpy = "^1.20"
 pandas = "^2.0"
