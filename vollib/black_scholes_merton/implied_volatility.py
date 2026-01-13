@@ -41,7 +41,6 @@ The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .
 # IMPORTS
 
 # Standard library imports
-from __future__ import division
 
 # Related third party imports
 from vollib.lets_be_rational import implied_volatility_from_a_transformed_rational_guess as iv

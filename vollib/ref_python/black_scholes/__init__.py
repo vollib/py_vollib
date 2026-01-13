@@ -22,7 +22,6 @@ vollib.ref_python is a pure python version of vollib without any dependence on L
 # IMPORTS
 
 # Standard library imports
-from __future__ import division
 
 # Related third party imports
 import numpy
@@ -66,7 +65,7 @@ def d1(S, K, t, r, sigma):  # see Hull, page 292
     """
 
     sigma_squared = sigma * sigma
-    numerator = numpy.log(S / float(K)) + (r + sigma_squared / 2.) * t
+    numerator = numpy.log(numpy.float64(S) / numpy.float64(K)) + (r + sigma_squared / 2.) * t
     denominator = sigma * numpy.sqrt(t)
 
     if not denominator:

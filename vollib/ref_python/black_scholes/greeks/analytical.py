@@ -22,7 +22,6 @@ vollib.ref_python is a pure python version of vollib without any dependence on L
 # IMPORTS
 
 # Standard library imports
-from __future__ import division
 
 # Related third party imports
 import numpy

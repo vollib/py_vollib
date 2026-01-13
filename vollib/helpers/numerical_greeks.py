@@ -63,7 +63,6 @@ Note about the parameter "b":
 # IMPORTS
 
 # Standard library imports
-from __future__ import division
 
 # Related third party imports
 
@@ -96,8 +95,11 @@ def delta(flag, S, K, t, r, sigma, b, pricing_function):
     :param pricing_function: any function returning the price of an option
     :type pricing_function: python function object
     """
+    if S == 0 and K == 0:
+        raise ZeroDivisionError("delta undefined for S=0, K=0")
     if S == 0:
-        # For S=0: call is worthless (delta=0), put is max value (delta=-1)
+        # Avoid division by zero in denominator (2 * S * dS)
+        # Return limit values: call worthless (delta=0), put max value (delta=-1)
         return 0.0 if flag == 'c' else -1.0
     if t == 0.0:
         if S == K:
@@ -211,8 +213,10 @@ def gamma(flag, S, K, t, r, sigma, b, pricing_function):
     :type pricing_function: python function object
     """
 
+    if S == 0 and K == 0:
+        raise ZeroDivisionError("gamma undefined for S=0, K=0")
     if S == 0:
-        # For S=0: gamma is 0 (no curvature in delta for deep OTM/ITM options)
+        # Avoid division by zero in denominator (S * dS) ** 2
         return 0.0
     if t == 0:
         return float("inf") if S == K else 0.0

@@ -39,7 +39,6 @@ The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .
 # IMPORTS
 
 # Standard library imports
-from __future__ import division
 from math import log, sqrt
 
 # Related third party imports

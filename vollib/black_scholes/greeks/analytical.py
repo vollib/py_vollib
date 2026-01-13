@@ -39,7 +39,6 @@ The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .
 # IMPORTS
 
 # Standard library imports
-from __future__ import division
 
 # Related third party imports
 from vollib.lets_be_rational import norm_cdf as N
