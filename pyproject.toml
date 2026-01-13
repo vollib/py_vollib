@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vollib-test"
-version = "1.0.3"
+version = "1.0.4"
 description = "Python library for calculating option prices, implied volatility and greeks."
 authors = ["vollib <vollib@gammoncap.com>"]
 license = "MIT"
