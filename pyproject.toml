@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "vollib"
+name = "vollib-test"
 version = "1.0.3"
 description = "Python library for calculating option prices, implied volatility and greeks."
 authors = ["vollib <vollib@gammoncap.com>"]
 license = "MIT"
-readme = "README.rst"
+readme = "README.md"
 homepage = "http://vollib.org"
 repository = "https://github.com/vollib/vollib"
 packages = [{include = "vollib"}]
