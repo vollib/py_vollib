@@ -46,7 +46,7 @@ class IteratorForTestData(object):
 
     def next_row(self):
         if self.has_next():
-            row = self.df.ix[self.row_id].to_dict()
+            row = self.df.iloc[self.row_id].to_dict()
             self.row_id += 1
             return row
 

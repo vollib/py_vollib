@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "py_vollib"
+version = "1.0.3"
+description = "Python library for calculating option prices, implied volatility and greeks."
+authors = ["vollib <vollib@gammoncap.com>"]
+license = "MIT"
+readme = "README.rst"
+homepage = "http://vollib.org"
+repository = "https://github.com/vollib/py_vollib"
+packages = [{include = "py_vollib"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+py_lets_be_rational = {path = "../py_lets_be_rational", develop = true}
+simplejson = "^3.0"
+numpy = "^1.20"
+pandas = "^2.0"
+scipy = "^1.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
