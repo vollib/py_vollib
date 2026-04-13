@@ -4,7 +4,7 @@ sphinx_rtd_theme==0.2.4
 recommonmark==0.4.0
 
 # for testing
-pytest==3.0.7
+pytest==9.0.3
 
 # for experiments
 matplotlib==2.0.0
