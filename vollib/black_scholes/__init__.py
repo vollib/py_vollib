@@ -55,7 +55,7 @@ def black_scholes(flag, S, K, t, r, sigma):
 
     :param S: underlying asset price
     :type S: float
-    :param K: strike price
+    :param K: strike price; must be strictly positive.
     :type K: float
     :param sigma: annualized standard deviation, or volatility
     :type sigma: float

@@ -1,0 +1,544 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vollib.ref_python.black_scholes_merton.greeks package &mdash; vollib 1.0.7 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=46dfa7f5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="vollib.ref_python.black_scholes_merton package" href="vollib.ref_python.black_scholes_merton.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            vollib
+              <img src="../_static/vollib_60.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">   vollib modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="vollib.html">vollib package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="vollib.black.html">vollib.black package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vollib.black_scholes.html">vollib.black_scholes package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vollib.black_scholes_merton.html">vollib.black_scholes_merton package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vollib.helpers.html">vollib.helpers package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="vollib.ref_python.html">vollib.ref_python package</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="vollib.ref_python.black.html">vollib.ref_python.black package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vollib.ref_python.black_scholes.html">vollib.ref_python.black_scholes package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="vollib.ref_python.black_scholes_merton.html">vollib.ref_python.black_scholes_merton package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">vollib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">vollib</a></li>
+          <li class="breadcrumb-item"><a href="vollib.html">vollib package</a></li>
+          <li class="breadcrumb-item"><a href="vollib.ref_python.html">vollib.ref_python package</a></li>
+          <li class="breadcrumb-item"><a href="vollib.ref_python.black_scholes_merton.html">vollib.ref_python.black_scholes_merton package</a></li>
+      <li class="breadcrumb-item active">vollib.ref_python.black_scholes_merton.greeks package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidoc/vollib.ref_python.black_scholes_merton.greeks.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vollib-ref-python-black-scholes-merton-greeks-package">
+<h1>vollib.ref_python.black_scholes_merton.greeks package<a class="headerlink" href="#vollib-ref-python-black-scholes-merton-greeks-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-vollib.ref_python.black_scholes_merton.greeks.analytical">
+<span id="vollib-ref-python-black-scholes-merton-greeks-analytical-module"></span><h2>vollib.ref_python.black_scholes_merton.greeks.analytical module<a class="headerlink" href="#module-vollib.ref_python.black_scholes_merton.greeks.analytical" title="Link to this heading"></a></h2>
+<section id="vollib-ref-python-black-scholes-merton-greeks-analytical">
+<h3>vollib.ref_python.black_scholes_merton.greeks.analytical<a class="headerlink" href="#vollib-ref-python-black-scholes-merton-greeks-analytical" title="Link to this heading"></a></h3>
+<p>A library for option pricing, implied volatility, and
+greek calculation.  vollib is based on lets_be_rational,
+a Python wrapper for LetsBeRational by Peter Jaeckel as
+described below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright<span class="colon">:</span></dt>
+<dd class="field-odd"><p>© 2017 Gammon Capital LLC</p>
+</dd>
+<dt class="field-even">license<span class="colon">:</span></dt>
+<dd class="field-even"><p>MIT, see LICENSE for more details.</p>
+</dd>
+</dl>
+<section id="vollib-ref-python-is-a-pure-python-version-of-vollib-without-any-dependence-on-letsberational-it-is-provided-purely-as-a-reference-implementation-for-sanity-checking-it-is-not-recommended-for-industrial-use">
+<h4>vollib.ref_python is a pure python version of vollib without any dependence on LetsBeRational. It is provided purely as a reference implementation for sanity checking. It is not recommended for industrial use.<a class="headerlink" href="#vollib-ref-python-is-a-pure-python-version-of-vollib-without-any-dependence-on-letsberational-it-is-provided-purely-as-a-reference-implementation-for-sanity-checking-it-is-not-recommended-for-industrial-use" title="Link to this heading"></a></h4>
+</section>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.ref_python.black_scholes_merton.greeks.analytical.delta">
+<span class="sig-prename descclassname"><span class="pre">vollib.ref_python.black_scholes_merton.greeks.analytical.</span></span><span class="sig-name descname"><span class="pre">delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/ref_python/black_scholes_merton/greeks/analytical.html#delta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.ref_python.black_scholes_merton.greeks.analytical.delta" title="Link to this definition"></a></dt>
+<dd><p>Returns the Black-Scholes-Merton delta of an option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – annual risk-free interest rate</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – volatility</p></li>
+<li><p><strong>q</strong> (<em>float</em>) – annualized continuous dividend yield</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<p>Example 17.1, page 355, Hull:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="mi">49</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mf">.05</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="mf">0.3846</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">delta_calc</span> <span class="o">=</span> <span class="n">delta</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 0.521601633972</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">delta_text_book</span> <span class="o">=</span> <span class="mf">0.522</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">delta_calc</span> <span class="o">-</span> <span class="n">delta_text_book</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">.01</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.ref_python.black_scholes_merton.greeks.analytical.gamma">
+<span class="sig-prename descclassname"><span class="pre">vollib.ref_python.black_scholes_merton.greeks.analytical.</span></span><span class="sig-name descname"><span class="pre">gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/ref_python/black_scholes_merton/greeks/analytical.html#gamma"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.ref_python.black_scholes_merton.greeks.analytical.gamma" title="Link to this definition"></a></dt>
+<dd><p>Returns the Black-Scholes-Merton gamma of an option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – annual risk-free interest rate</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – volatility</p></li>
+<li><p><strong>q</strong> (<em>float</em>) – annualized continuous dividend yield</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<p>Example 17.4, page 364, Hull:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="mi">49</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mf">.05</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="mf">0.3846</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gamma_calc</span> <span class="o">=</span> <span class="n">gamma</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 0.0655453772525</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gamma_text_book</span> <span class="o">=</span> <span class="mf">0.066</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">gamma_calc</span> <span class="o">-</span> <span class="n">gamma_text_book</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">.001</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.ref_python.black_scholes_merton.greeks.analytical.rho">
+<span class="sig-prename descclassname"><span class="pre">vollib.ref_python.black_scholes_merton.greeks.analytical.</span></span><span class="sig-name descname"><span class="pre">rho</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/ref_python/black_scholes_merton/greeks/analytical.html#rho"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.ref_python.black_scholes_merton.greeks.analytical.rho" title="Link to this definition"></a></dt>
+<dd><p>Returns the Black-Scholes-Merton rho of an option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – annual risk-free interest rate</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – volatility</p></li>
+<li><p><strong>q</strong> (<em>float</em>) – annualized continuous dividend yield</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<p>The text book analytical formula does not multiply by .01,
+but in practice rho is defined as the change in price
+for each 1 percent change in r, hence we multiply by 0.01.</p>
+<p>Example 17.7, page 368, Hull:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="mi">49</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mf">.05</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="mf">0.3846</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rho_calc</span> <span class="o">=</span> <span class="n">rho</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 0.089065740988</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rho_text_book</span> <span class="o">=</span> <span class="mf">0.0891</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">rho_calc</span> <span class="o">-</span> <span class="n">rho_text_book</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">.0001</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.ref_python.black_scholes_merton.greeks.analytical.theta">
+<span class="sig-prename descclassname"><span class="pre">vollib.ref_python.black_scholes_merton.greeks.analytical.</span></span><span class="sig-name descname"><span class="pre">theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/ref_python/black_scholes_merton/greeks/analytical.html#theta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.ref_python.black_scholes_merton.greeks.analytical.theta" title="Link to this definition"></a></dt>
+<dd><p>Returns the Black-Scholes-Merton theta of an option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – annual risk-free interest rate</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – volatility</p></li>
+<li><p><strong>q</strong> (<em>float</em>) – annualized continuous dividend yield</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<p>The text book analytical formula does not divide by 365,
+but in practice theta is defined as the change in price
+for each day change in t, hence we divide by 365.</p>
+<p>Example 17.2, page 359, Hull:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="mi">49</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mf">.05</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="mf">0.3846</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">annual_theta_calc</span> <span class="o">=</span> <span class="n">theta</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span> <span class="o">*</span> <span class="mi">365</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># -4.30538996455</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">annual_theta_text_book</span> <span class="o">=</span> <span class="o">-</span><span class="mf">4.31</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">annual_theta_calc</span> <span class="o">-</span> <span class="n">annual_theta_text_book</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">.01</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Using the same inputs with a put.
+&gt;&gt;&gt; S = 49
+&gt;&gt;&gt; K = 50
+&gt;&gt;&gt; r = .05
+&gt;&gt;&gt; t = 0.3846
+&gt;&gt;&gt; sigma = 0.2
+&gt;&gt;&gt; flag = ‘p’
+&gt;&gt;&gt; annual_theta_calc = theta(flag, S, K, t, r, sigma, q) * 365
+&gt;&gt;&gt; # -1.8530056722
+&gt;&gt;&gt; annual_theta_reference = -1.8530056722
+&gt;&gt;&gt; abs(annual_theta_calc - annual_theta_reference) &lt; .000001
+True</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.ref_python.black_scholes_merton.greeks.analytical.vega">
+<span class="sig-prename descclassname"><span class="pre">vollib.ref_python.black_scholes_merton.greeks.analytical.</span></span><span class="sig-name descname"><span class="pre">vega</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/ref_python/black_scholes_merton/greeks/analytical.html#vega"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.ref_python.black_scholes_merton.greeks.analytical.vega" title="Link to this definition"></a></dt>
+<dd><p>Returns the Black-Scholes-Merton vega of an option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – annual risk-free interest rate</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – volatility</p></li>
+<li><p><strong>q</strong> (<em>float</em>) – annualized continuous dividend yield</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<p>The text book analytical formula does not multiply by .01,
+but in practice vega is defined as the change in price
+for each 1 percent change in IV, hence we multiply by 0.01.</p>
+<p>Example 17.6, page 367, Hull:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="mi">49</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mf">.05</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="mf">0.3846</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vega_calc</span> <span class="o">=</span> <span class="n">vega</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># 0.121052427542</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vega_text_book</span> <span class="o">=</span> <span class="mf">0.121</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">vega_calc</span> <span class="o">-</span> <span class="n">vega_text_book</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">.01</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-vollib.ref_python.black_scholes_merton.greeks.numerical">
+<span id="vollib-ref-python-black-scholes-merton-greeks-numerical-module"></span><h2>vollib.ref_python.black_scholes_merton.greeks.numerical module<a class="headerlink" href="#module-vollib.ref_python.black_scholes_merton.greeks.numerical" title="Link to this heading"></a></h2>
+<section id="vollib-ref-python-black-scholes-merton-greeks-numerical">
+<h3>vollib.ref_python.black_scholes_merton.greeks.numerical<a class="headerlink" href="#vollib-ref-python-black-scholes-merton-greeks-numerical" title="Link to this heading"></a></h3>
+<p>A library for option pricing, implied volatility, and
+greek calculation.  vollib is based on lets_be_rational,
+a Python wrapper for LetsBeRational by Peter Jaeckel as
+described below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright<span class="colon">:</span></dt>
+<dd class="field-odd"><p>© 2017 Gammon Capital LLC</p>
+</dd>
+<dt class="field-even">license<span class="colon">:</span></dt>
+<dd class="field-even"><p>MIT, see LICENSE for more details.</p>
+</dd>
+</dl>
+<section id="id1">
+<h4>vollib.ref_python is a pure python version of vollib without any dependence on LetsBeRational. It is provided purely as a reference implementation for sanity checking. It is not recommended for industrial use.<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+</section>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.ref_python.black_scholes_merton.greeks.numerical.delta">
+<span class="sig-prename descclassname"><span class="pre">vollib.ref_python.black_scholes_merton.greeks.numerical.</span></span><span class="sig-name descname"><span class="pre">delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/ref_python/black_scholes_merton/greeks/numerical.html#delta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.ref_python.black_scholes_merton.greeks.numerical.delta" title="Link to this definition"></a></dt>
+<dd><p>Returns the Black-Scholes-Merton delta of an option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – annual risk-free interest rate</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – volatility</p></li>
+<li><p><strong>q</strong> (<em>float</em>) – annualized continuous dividend yield</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.ref_python.black_scholes_merton.greeks.numerical.f">
+<span class="sig-prename descclassname"><span class="pre">vollib.ref_python.black_scholes_merton.greeks.numerical.</span></span><span class="sig-name descname"><span class="pre">f</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vollib.ref_python.black_scholes_merton.greeks.numerical.f" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.ref_python.black_scholes_merton.greeks.numerical.gamma">
+<span class="sig-prename descclassname"><span class="pre">vollib.ref_python.black_scholes_merton.greeks.numerical.</span></span><span class="sig-name descname"><span class="pre">gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/ref_python/black_scholes_merton/greeks/numerical.html#gamma"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.ref_python.black_scholes_merton.greeks.numerical.gamma" title="Link to this definition"></a></dt>
+<dd><p>Returns the Black-Scholes-Merton gamma of an option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – annual risk-free interest rate</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – volatility</p></li>
+<li><p><strong>q</strong> (<em>float</em>) – annualized continuous dividend yield</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.ref_python.black_scholes_merton.greeks.numerical.rho">
+<span class="sig-prename descclassname"><span class="pre">vollib.ref_python.black_scholes_merton.greeks.numerical.</span></span><span class="sig-name descname"><span class="pre">rho</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/ref_python/black_scholes_merton/greeks/numerical.html#rho"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.ref_python.black_scholes_merton.greeks.numerical.rho" title="Link to this definition"></a></dt>
+<dd><p>Returns the Black-Scholes-Merton rho of an option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – annual risk-free interest rate</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – volatility</p></li>
+<li><p><strong>q</strong> (<em>float</em>) – annualized continuous dividend yield</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.ref_python.black_scholes_merton.greeks.numerical.test_analytical_vs_numerical">
+<span class="sig-prename descclassname"><span class="pre">vollib.ref_python.black_scholes_merton.greeks.numerical.</span></span><span class="sig-name descname"><span class="pre">test_analytical_vs_numerical</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/ref_python/black_scholes_merton/greeks/numerical.html#test_analytical_vs_numerical"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.ref_python.black_scholes_merton.greeks.numerical.test_analytical_vs_numerical" title="Link to this definition"></a></dt>
+<dd><p>Test by comparing analytical and numerical values.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span>  <span class="mi">49</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">K</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mf">.05</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="mf">.05</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="mf">0.3846</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">epsilon</span> <span class="o">=</span> <span class="mf">.0001</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">delta</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">adelta</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">v1</span><span class="o">-</span><span class="n">v2</span><span class="p">)</span><span class="o">&lt;</span><span class="n">epsilon</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">gamma</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">agamma</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">v1</span><span class="o">-</span><span class="n">v2</span><span class="p">)</span><span class="o">&lt;</span><span class="n">epsilon</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">rho</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">arho</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">v1</span><span class="o">-</span><span class="n">v2</span><span class="p">)</span><span class="o">&lt;</span><span class="n">epsilon</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">vega</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">avega</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">v1</span><span class="o">-</span><span class="n">v2</span><span class="p">)</span><span class="o">&lt;</span><span class="n">epsilon</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">theta</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">atheta</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">v1</span><span class="o">-</span><span class="n">v2</span><span class="p">)</span><span class="o">&lt;</span><span class="n">epsilon</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.ref_python.black_scholes_merton.greeks.numerical.theta">
+<span class="sig-prename descclassname"><span class="pre">vollib.ref_python.black_scholes_merton.greeks.numerical.</span></span><span class="sig-name descname"><span class="pre">theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/ref_python/black_scholes_merton/greeks/numerical.html#theta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.ref_python.black_scholes_merton.greeks.numerical.theta" title="Link to this definition"></a></dt>
+<dd><p>Returns the Black-Scholes-Merton theta of an option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – annual risk-free interest rate</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – volatility</p></li>
+<li><p><strong>q</strong> (<em>float</em>) – annualized continuous dividend yield</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.ref_python.black_scholes_merton.greeks.numerical.vega">
+<span class="sig-prename descclassname"><span class="pre">vollib.ref_python.black_scholes_merton.greeks.numerical.</span></span><span class="sig-name descname"><span class="pre">vega</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/ref_python/black_scholes_merton/greeks/numerical.html#vega"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.ref_python.black_scholes_merton.greeks.numerical.vega" title="Link to this definition"></a></dt>
+<dd><p>Returns the Black-Scholes-Merton vega of an option.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – annual risk-free interest rate</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – volatility</p></li>
+<li><p><strong>q</strong> (<em>float</em>) – annualized continuous dividend yield</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-vollib.ref_python.black_scholes_merton.greeks">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-vollib.ref_python.black_scholes_merton.greeks" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="vollib.ref_python.black_scholes_merton.html" class="btn btn-neutral float-left" title="vollib.ref_python.black_scholes_merton package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017, Gammon Capital LLC..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

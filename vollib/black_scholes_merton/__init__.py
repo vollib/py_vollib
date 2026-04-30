@@ -56,7 +56,7 @@ def black_scholes_merton(flag, S, K, t, r, sigma, q):
 
     :param S: underlying asset price
     :type S: float
-    :param K: strike price
+    :param K: strike price; must be strictly positive.
     :type K: float
     :param sigma: annualized standard deviation, or volatility
     :type sigma: float
@@ -83,7 +83,10 @@ def black_scholes_merton(flag, S, K, t, r, sigma, q):
     True
     """
     
-    F = S * numpy.exp((r-q)*t)
+    F = float(S * numpy.exp((r-q)*t))
+    K = float(K)
+    sigma = float(sigma)
+    t = float(t)
     deflater = numpy.exp(-r * t)
     return black(F, K, sigma, t, binary_flag[flag]) * deflater
 

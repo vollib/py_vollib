@@ -63,8 +63,6 @@ def implied_volatility(price, S, K, t, r, q, flag):
     :type S: float
     :param K: strike price
     :type K: float
-    :param sigma: annualized standard deviation, or volatility
-    :type sigma: float
     :param t: time to expiration in years
     :type t: float
     :param r: risk-free interest rate

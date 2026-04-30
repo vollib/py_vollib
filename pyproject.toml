@@ -1,25 +1,37 @@
 [tool.poetry]
-name = "vollib-test"
-version = "1.0.5"
+name = "vollib"
+version = "1.0.7"
 description = "Python library for calculating option prices, implied volatility and greeks."
 authors = ["vollib <vollib@gammoncap.com>"]
 license = "MIT"
 readme = "README.md"
 homepage = "http://vollib.org"
-repository = "https://github.com/vollib/vollib"
-packages = [{include = "vollib"}]
+repository = "https://github.com/vollib/py_vollib"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+]
+packages = [
+    {include = "vollib"},
+    {include = "py_vollib"},
+]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<3.13"
 cody-special = "^1.0.0"
 piecewise-rational = "^1.0.0"
+py_lets_be_rational = "^1.0.1"
 simplejson = "^3.0"
 numpy = "^1.20"
 pandas = "^2.0"
 scipy = "^1.10"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^7.0"
+pytest = ">=7.4,<9.0"
 
 [build-system]
 requires = ["poetry-core"]

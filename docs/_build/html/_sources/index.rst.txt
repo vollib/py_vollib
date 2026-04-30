@@ -20,7 +20,7 @@ Contents:
 .. toctree::
    :titlesonly:
 
-      py_vollib modules <apidoc/modules.rst>
+      vollib modules <apidoc/modules.rst>
 
 
 Indices and tables

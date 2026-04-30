@@ -1,22 +1,37 @@
-"""
-Internal lets_be_rational module for vollib.
+"""Compatibility exports for LetsBeRational functionality.
 
-Based on Peter Jäckel's LetsBeRational algorithm.
+The implementation lives in the external ``py_lets_be_rational`` package.
+This module preserves the historical ``vollib.lets_be_rational`` namespace.
 """
-from vollib.lets_be_rational.core import (
+
+from py_lets_be_rational import (
+    black,
     implied_volatility_from_a_transformed_rational_guess,
     implied_volatility_from_a_transformed_rational_guess_with_limited_iterations,
-    normalised_implied_volatility_from_a_transformed_rational_guess,
-    normalised_implied_volatility_from_a_transformed_rational_guess_with_limited_iterations,
+    norm_cdf,
     normalised_black,
     normalised_black_call,
-    black,
+    normalised_implied_volatility_from_a_transformed_rational_guess,
+    normalised_implied_volatility_from_a_transformed_rational_guess_with_limited_iterations,
     normalised_vega,
 )
-from vollib.lets_be_rational.exceptions import (
-    BelowIntrinsicException,
-    AboveMaximumException,
-    PriceIsBelowIntrinsic,
-    PriceIsAboveMaximum,
-)
-from cody_special import norm_cdf
+from py_lets_be_rational.exceptions import AboveMaximumException, BelowIntrinsicException
+
+PriceIsBelowIntrinsic = BelowIntrinsicException
+PriceIsAboveMaximum = AboveMaximumException
+
+__all__ = [
+    "AboveMaximumException",
+    "BelowIntrinsicException",
+    "PriceIsAboveMaximum",
+    "PriceIsBelowIntrinsic",
+    "black",
+    "implied_volatility_from_a_transformed_rational_guess",
+    "implied_volatility_from_a_transformed_rational_guess_with_limited_iterations",
+    "norm_cdf",
+    "normalised_black",
+    "normalised_black_call",
+    "normalised_implied_volatility_from_a_transformed_rational_guess",
+    "normalised_implied_volatility_from_a_transformed_rational_guess_with_limited_iterations",
+    "normalised_vega",
+]

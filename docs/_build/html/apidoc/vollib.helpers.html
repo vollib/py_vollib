@@ -1,0 +1,565 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vollib.helpers package &mdash; vollib 1.0.7 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=46dfa7f5"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="vollib.ref_python package" href="vollib.ref_python.html" />
+    <link rel="prev" title="vollib.black_scholes_merton.greeks package" href="vollib.black_scholes_merton.greeks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            vollib
+              <img src="../_static/vollib_60.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">   vollib modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="vollib.html">vollib package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="vollib.black.html">vollib.black package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vollib.black_scholes.html">vollib.black_scholes package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vollib.black_scholes_merton.html">vollib.black_scholes_merton package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">vollib.helpers package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vollib.ref_python.html">vollib.ref_python package</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">vollib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">vollib</a></li>
+          <li class="breadcrumb-item"><a href="vollib.html">vollib package</a></li>
+      <li class="breadcrumb-item active">vollib.helpers package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/apidoc/vollib.helpers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vollib-helpers-package">
+<h1>vollib.helpers package<a class="headerlink" href="#vollib-helpers-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-vollib.helpers.constants">
+<span id="vollib-helpers-constants-module"></span><h2>vollib.helpers.constants module<a class="headerlink" href="#module-vollib.helpers.constants" title="Link to this heading"></a></h2>
+<section id="vollib-helpers-constants">
+<h3>vollib.helpers.constants<a class="headerlink" href="#vollib-helpers-constants" title="Link to this heading"></a></h3>
+<p>A library for option pricing, implied volatility, and
+greek calculation.  vollib is based on lets_be_rational,
+a Python wrapper for LetsBeRational by Peter Jaeckel as
+described below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright<span class="colon">:</span></dt>
+<dd class="field-odd"><p>© 2017 Gammon Capital LLC</p>
+</dd>
+<dt class="field-even">license<span class="colon">:</span></dt>
+<dd class="field-even"><p>MIT, see LICENSE for more details.</p>
+</dd>
+</dl>
+</section>
+<section id="about-letsberational">
+<h3>About LetsBeRational:<a class="headerlink" href="#about-letsberational" title="Link to this heading"></a></h3>
+<p>The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>========================================================================================
+Copyright © 2013-2014 Peter Jäckel.
+
+Permission to use, copy, modify, and distribute this software is freely granted,
+provided that this notice is preserved.
+
+WARRANTY DISCLAIMER
+The Software is provided &quot;as is&quot; without warranty of any kind, either express or implied,
+including without limitation any implied warranties of condition, uninterrupted use,
+merchantability, fitness for a particular purpose, or non-infringement.
+========================================================================================
+</pre></div>
+</div>
+</section>
+</section>
+<section id="module-vollib.helpers.distributions">
+<span id="vollib-helpers-distributions-module"></span><h2>vollib.helpers.distributions module<a class="headerlink" href="#module-vollib.helpers.distributions" title="Link to this heading"></a></h2>
+<section id="vollib-helpers-distributions">
+<h3>vollib.helpers.distributions<a class="headerlink" href="#vollib-helpers-distributions" title="Link to this heading"></a></h3>
+<p>A library for option pricing, implied volatility, and
+greek calculation.  vollib is based on lets_be_rational,
+a Python wrapper for LetsBeRational by Peter Jaeckel as
+described below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright<span class="colon">:</span></dt>
+<dd class="field-odd"><p>© 2017 Gammon Capital LLC</p>
+</dd>
+<dt class="field-even">license<span class="colon">:</span></dt>
+<dd class="field-even"><p>MIT, see LICENSE for more details.</p>
+</dd>
+</dl>
+</section>
+<section id="id1">
+<h3>About LetsBeRational:<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>========================================================================================
+Copyright © 2013-2014 Peter Jäckel.
+
+Permission to use, copy, modify, and distribute this software is freely granted,
+provided that this notice is preserved.
+
+WARRANTY DISCLAIMER
+The Software is provided &quot;as is&quot; without warranty of any kind, either express or implied,
+including without limitation any implied warranties of condition, uninterrupted use,
+merchantability, fitness for a particular purpose, or non-infringement.
+========================================================================================
+</pre></div>
+</div>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.helpers.distributions.CBND">
+<span class="sig-prename descclassname"><span class="pre">vollib.helpers.distributions.</span></span><span class="sig-name descname"><span class="pre">CBND</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/helpers/distributions.html#CBND"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.distributions.CBND" title="Link to this definition"></a></dt>
+<dd><p>A function for computing bivariate normal probabilities.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Alan</span> <span class="n">Genz</span>
+<span class="n">Department</span> <span class="n">of</span> <span class="n">Mathematics</span>
+<span class="n">Washington</span> <span class="n">State</span> <span class="n">University</span>
+<span class="n">Pullman</span><span class="p">,</span> <span class="n">WA</span> <span class="mi">99164</span><span class="o">-</span><span class="mi">3113</span>
+<span class="n">Email</span> <span class="p">:</span> <span class="n">alangenz</span><span class="nd">@wsu</span><span class="o">.</span><span class="n">edu</span>
+</pre></div>
+</div>
+<p>This function is based on the method described by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Drezner</span><span class="p">,</span> <span class="n">Z</span> <span class="ow">and</span> <span class="n">G</span><span class="o">.</span><span class="n">O</span><span class="o">.</span> <span class="n">Wesolowsky</span><span class="p">,</span> <span class="p">(</span><span class="mi">1990</span><span class="p">),</span>
+<span class="n">On</span> <span class="n">the</span> <span class="n">computation</span> <span class="n">of</span> <span class="n">the</span> <span class="n">bivariate</span> <span class="n">normal</span> <span class="n">integral</span><span class="p">,</span>
+<span class="n">Journal</span> <span class="n">of</span> <span class="n">Statist</span><span class="o">.</span> <span class="n">Comput</span><span class="o">.</span> <span class="n">Simul</span><span class="o">.</span> <span class="mi">35</span><span class="p">,</span> <span class="n">pp</span><span class="o">.</span> <span class="mi">101</span><span class="o">-</span><span class="mi">107</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>with major modifications for double precision, and for <code class="docutils literal notranslate"><span class="pre">|R|</span></code> close to 1.
+This code was originally transelated into VBA by Graeme West</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.helpers.distributions.CND">
+<span class="sig-prename descclassname"><span class="pre">vollib.helpers.distributions.</span></span><span class="sig-name descname"><span class="pre">CND</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/helpers/distributions.html#CND"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.distributions.CND" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-vollib.helpers.doctest_helper">
+<span id="vollib-helpers-doctest-helper-module"></span><h2>vollib.helpers.doctest_helper module<a class="headerlink" href="#module-vollib.helpers.doctest_helper" title="Link to this heading"></a></h2>
+<section id="vollib-helpers-doctest-helper">
+<h3>vollib.helpers.doctest_helper<a class="headerlink" href="#vollib-helpers-doctest-helper" title="Link to this heading"></a></h3>
+<p>A library for option pricing, implied volatility, and
+greek calculation.  vollib is based on lets_be_rational,
+a Python wrapper for LetsBeRational by Peter Jaeckel as
+described below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright<span class="colon">:</span></dt>
+<dd class="field-odd"><p>© 2017 Gammon Capital LLC</p>
+</dd>
+<dt class="field-even">license<span class="colon">:</span></dt>
+<dd class="field-even"><p>MIT, see LICENSE for more details.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h3>About LetsBeRational:<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<p>The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>========================================================================================
+Copyright © 2013-2014 Peter Jäckel.
+
+Permission to use, copy, modify, and distribute this software is freely granted,
+provided that this notice is preserved.
+
+WARRANTY DISCLAIMER
+The Software is provided &quot;as is&quot; without warranty of any kind, either express or implied,
+including without limitation any implied warranties of condition, uninterrupted use,
+merchantability, fitness for a particular purpose, or non-infringement.
+========================================================================================
+</pre></div>
+</div>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.helpers.doctest_helper.run_doctest">
+<span class="sig-prename descclassname"><span class="pre">vollib.helpers.doctest_helper.</span></span><span class="sig-name descname"><span class="pre">run_doctest</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/helpers/doctest_helper.html#run_doctest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.doctest_helper.run_doctest" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-vollib.helpers.exceptions">
+<span id="vollib-helpers-exceptions-module"></span><h2>vollib.helpers.exceptions module<a class="headerlink" href="#module-vollib.helpers.exceptions" title="Link to this heading"></a></h2>
+<section id="vollib-helpers-exceptions">
+<h3>vollib.helpers.exceptions<a class="headerlink" href="#vollib-helpers-exceptions" title="Link to this heading"></a></h3>
+<p>A library for option pricing, implied volatility, and
+greek calculation.  vollib is based on lets_be_rational,
+a Python wrapper for LetsBeRational by Peter Jaeckel as
+described below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright<span class="colon">:</span></dt>
+<dd class="field-odd"><p>© 2017 Gammon Capital LLC</p>
+</dd>
+<dt class="field-even">license<span class="colon">:</span></dt>
+<dd class="field-even"><p>MIT, see LICENSE for more details.</p>
+</dd>
+</dl>
+</section>
+<section id="id3">
+<h3>About LetsBeRational:<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p>The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>========================================================================================
+Copyright © 2013-2014 Peter Jäckel.
+
+Permission to use, copy, modify, and distribute this software is freely granted,
+provided that this notice is preserved.
+
+WARRANTY DISCLAIMER
+The Software is provided &quot;as is&quot; without warranty of any kind, either express or implied,
+including without limitation any implied warranties of condition, uninterrupted use,
+merchantability, fitness for a particular purpose, or non-infringement.
+========================================================================================
+</pre></div>
+</div>
+</section>
+<dl class="py exception">
+<dt class="sig sig-object py" id="vollib.helpers.exceptions.InvalidArgument">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vollib.helpers.exceptions.</span></span><span class="sig-name descname"><span class="pre">InvalidArgument</span></span><a class="reference internal" href="../_modules/vollib/helpers/exceptions.html#InvalidArgument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.exceptions.InvalidArgument" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="vollib.helpers.exceptions.PriceIsAboveMaximum">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vollib.helpers.exceptions.</span></span><span class="sig-name descname"><span class="pre">PriceIsAboveMaximum</span></span><a class="reference internal" href="../_modules/vollib/helpers/exceptions.html#PriceIsAboveMaximum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.exceptions.PriceIsAboveMaximum" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="vollib.helpers.exceptions.PriceIsBelowIntrinsic">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">vollib.helpers.exceptions.</span></span><span class="sig-name descname"><span class="pre">PriceIsBelowIntrinsic</span></span><a class="reference internal" href="../_modules/vollib/helpers/exceptions.html#PriceIsBelowIntrinsic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.exceptions.PriceIsBelowIntrinsic" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</section>
+<section id="module-vollib.helpers.numerical_greeks">
+<span id="vollib-helpers-numerical-greeks-module"></span><h2>vollib.helpers.numerical_greeks module<a class="headerlink" href="#module-vollib.helpers.numerical_greeks" title="Link to this heading"></a></h2>
+<section id="vollib-helpers-numerical-greeks">
+<h3>vollib.helpers.numerical_greeks<a class="headerlink" href="#vollib-helpers-numerical-greeks" title="Link to this heading"></a></h3>
+<p>A library for option pricing, implied volatility, and
+greek calculation.  vollib is based on lets_be_rational,
+a Python wrapper for LetsBeRational by Peter Jaeckel as
+described below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright<span class="colon">:</span></dt>
+<dd class="field-odd"><p>© 2017 Gammon Capital LLC</p>
+</dd>
+<dt class="field-even">license<span class="colon">:</span></dt>
+<dd class="field-even"><p>MIT, see LICENSE for more details.</p>
+</dd>
+</dl>
+</section>
+<section id="id4">
+<h3>About LetsBeRational:<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>========================================================================================
+Copyright © 2013-2014 Peter Jäckel.
+
+Permission to use, copy, modify, and distribute this software is freely granted,
+provided that this notice is preserved.
+
+WARRANTY DISCLAIMER
+The Software is provided &quot;as is&quot; without warranty of any kind, either express or implied,
+including without limitation any implied warranties of condition, uninterrupted use,
+merchantability, fitness for a particular purpose, or non-infringement.
+========================================================================================
+</pre></div>
+</div>
+</section>
+<section id="note-about-the-parameter-b">
+<h3>Note about the parameter “b”:<a class="headerlink" href="#note-about-the-parameter-b" title="Link to this heading"></a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">======================================================================================</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Espen</span> <span class="n">Gaarder</span> <span class="n">Haug</span><span class="s1">&#39;s</span>
+<span class="s2">&quot;The Complete Guide to Option Pricing Formulas,&quot;</span> <span class="n">Second</span> <span class="n">Edition</span><span class="p">,</span>
+<span class="n">page</span> <span class="mf">90.</span>
+
+<span class="o">+-----------+------------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">b</span> <span class="o">=</span> <span class="n">r</span>     <span class="o">|</span>  <span class="n">gives</span> <span class="n">the</span> <span class="n">Black</span> <span class="ow">and</span> <span class="n">Scholes</span> <span class="p">(</span><span class="mi">1973</span><span class="p">)</span> <span class="n">stock</span> <span class="n">option</span>     <span class="o">|</span>
+<span class="o">|</span>           <span class="o">|</span>  <span class="n">model</span>                                               <span class="o">|</span>
+<span class="o">+-----------+------------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">b</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span><span class="n">q</span>  <span class="o">|</span>  <span class="n">gives</span> <span class="n">the</span> <span class="n">Merton</span> <span class="p">(</span><span class="mi">1973</span><span class="p">)</span> <span class="n">stock</span> <span class="n">option</span> <span class="n">model</span> <span class="k">with</span>     <span class="o">|</span>
+<span class="o">|</span>           <span class="o">|</span>  <span class="n">continuous</span> <span class="n">dividend</span> <span class="k">yield</span> <span class="n">q</span>                         <span class="o">|</span>
+<span class="o">+-----------+------------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span>     <span class="o">|</span>  <span class="n">gives</span> <span class="n">the</span> <span class="n">Black</span> <span class="p">(</span><span class="mi">1976</span><span class="p">)</span> <span class="n">futures</span> <span class="n">option</span> <span class="n">model</span>         <span class="o">|</span>
+<span class="o">+-----------+------------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="o">|</span>  <span class="n">gives</span> <span class="n">the</span> <span class="n">Asay</span> <span class="p">(</span><span class="mi">1982</span><span class="p">)</span> <span class="n">margined</span> <span class="n">futures</span> <span class="n">option</span> <span class="n">model</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span>     <span class="o">|</span>                                                      <span class="o">|</span>
+<span class="o">+-----------+------------------------------------------------------+</span>
+<span class="o">======================================================================================</span>
+</pre></div>
+</div>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.helpers.numerical_greeks.delta">
+<span class="sig-prename descclassname"><span class="pre">vollib.helpers.numerical_greeks.</span></span><span class="sig-name descname"><span class="pre">delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pricing_function</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/helpers/numerical_greeks.html#delta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.numerical_greeks.delta" title="Link to this definition"></a></dt>
+<dd><p>Calculate option delta using numerical integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – annualized standard deviation, or volatility</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – risk-free interest rate</p></li>
+<li><p><strong>b</strong> (<em>float</em>) – see above</p></li>
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>pricing_function</strong> (<em>python function object</em>) – any function returning the price of an option</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.helpers.numerical_greeks.gamma">
+<span class="sig-prename descclassname"><span class="pre">vollib.helpers.numerical_greeks.</span></span><span class="sig-name descname"><span class="pre">gamma</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pricing_function</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/helpers/numerical_greeks.html#gamma"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.numerical_greeks.gamma" title="Link to this definition"></a></dt>
+<dd><p>Calculate option gamma using numerical integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – annualized standard deviation, or volatility</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – risk-free interest rate</p></li>
+<li><p><strong>b</strong> (<em>float</em>) – see above</p></li>
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>pricing_function</strong> (<em>python function object</em>) – any function returning the price of an option</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.helpers.numerical_greeks.rho">
+<span class="sig-prename descclassname"><span class="pre">vollib.helpers.numerical_greeks.</span></span><span class="sig-name descname"><span class="pre">rho</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pricing_function</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/helpers/numerical_greeks.html#rho"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.numerical_greeks.rho" title="Link to this definition"></a></dt>
+<dd><p>Calculate option rho using numerical integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – annualized standard deviation, or volatility</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – risk-free interest rate</p></li>
+<li><p><strong>b</strong> (<em>float</em>) – see above</p></li>
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>pricing_function</strong> (<em>python function object</em>) – any function returning the price of an option</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.helpers.numerical_greeks.theta">
+<span class="sig-prename descclassname"><span class="pre">vollib.helpers.numerical_greeks.</span></span><span class="sig-name descname"><span class="pre">theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pricing_function</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/helpers/numerical_greeks.html#theta"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.numerical_greeks.theta" title="Link to this definition"></a></dt>
+<dd><p>Calculate option theta using numerical integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – annualized standard deviation, or volatility</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – risk-free interest rate</p></li>
+<li><p><strong>b</strong> (<em>float</em>) – see above</p></li>
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>pricing_function</strong> (<em>python function object</em>) – any function returning the price of an option</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.helpers.numerical_greeks.vega">
+<span class="sig-prename descclassname"><span class="pre">vollib.helpers.numerical_greeks.</span></span><span class="sig-name descname"><span class="pre">vega</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pricing_function</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/helpers/numerical_greeks.html#vega"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.numerical_greeks.vega" title="Link to this definition"></a></dt>
+<dd><p>Calculate option vega using numerical integration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>K</strong> (<em>float</em>) – strike price</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – annualized standard deviation, or volatility</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – risk-free interest rate</p></li>
+<li><p><strong>b</strong> (<em>float</em>) – see above</p></li>
+<li><p><strong>flag</strong> (<em>str</em>) – ‘c’ or ‘p’ for call or put.</p></li>
+<li><p><strong>pricing_function</strong> (<em>python function object</em>) – any function returning the price of an option</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-vollib.helpers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-vollib.helpers" title="Link to this heading"></a></h2>
+<section id="vollib-helpers">
+<h3>vollib.helpers<a class="headerlink" href="#vollib-helpers" title="Link to this heading"></a></h3>
+<p>A library for option pricing, implied volatility, and
+greek calculation.  vollib is based on lets_be_rational,
+a Python wrapper for LetsBeRational by Peter Jaeckel as
+described below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright<span class="colon">:</span></dt>
+<dd class="field-odd"><p>© 2017 Gammon Capital LLC</p>
+</dd>
+<dt class="field-even">license<span class="colon">:</span></dt>
+<dd class="field-even"><p>MIT, see LICENSE for more details.</p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h3>About LetsBeRational:<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<p>The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>========================================================================================
+Copyright © 2013-2014 Peter Jäckel.
+
+Permission to use, copy, modify, and distribute this software is freely granted,
+provided that this notice is preserved.
+
+WARRANTY DISCLAIMER
+The Software is provided &quot;as is&quot; without warranty of any kind, either express or implied,
+including without limitation any implied warranties of condition, uninterrupted use,
+merchantability, fitness for a particular purpose, or non-infringement.
+========================================================================================
+</pre></div>
+</div>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.helpers.forward_price">
+<span class="sig-prename descclassname"><span class="pre">vollib.helpers.</span></span><span class="sig-name descname"><span class="pre">forward_price</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">S</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/helpers.html#forward_price"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.forward_price" title="Link to this definition"></a></dt>
+<dd><p>Calculate the forward price of an underlying asset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>S</strong> (<em>float</em>) – underlying asset price</p></li>
+<li><p><strong>t</strong> (<em>float</em>) – time to expiration in years</p></li>
+<li><p><strong>r</strong> (<em>float</em>) – risk-free interest rate</p></li>
+</ul>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">S</span> <span class="o">=</span> <span class="mi">95</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="mf">.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mf">.02</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">F</span> <span class="o">=</span> <span class="n">forward_price</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pre_calculated</span> <span class="o">=</span> <span class="mf">95.95476587299596</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">abs</span><span class="p">(</span><span class="n">F</span><span class="o">-</span><span class="n">pre_calculated</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">.000000001</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.helpers.pdf">
+<span class="sig-prename descclassname"><span class="pre">vollib.helpers.</span></span><span class="sig-name descname"><span class="pre">pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vollib.helpers.pdf" title="Link to this definition"></a></dt>
+<dd><p>the probability density function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> – a continuous random variable</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="vollib.helpers.test_binary_flag">
+<span class="sig-prename descclassname"><span class="pre">vollib.helpers.</span></span><span class="sig-name descname"><span class="pre">test_binary_flag</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/vollib/helpers.html#test_binary_flag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#vollib.helpers.test_binary_flag" title="Link to this definition"></a></dt>
+<dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">========================================================</span>
+
+<span class="n">Note</span><span class="p">:</span>  <span class="n">In</span> <span class="s2">&quot;Let&#39;s be Rational,&quot;</span> <span class="n">Peter</span> <span class="n">Jäckel</span> <span class="n">uses</span> <span class="n">θ</span> <span class="k">as</span> <span class="n">a</span> <span class="n">flag</span>
+<span class="n">to</span> <span class="n">distinguish</span> <span class="n">between</span> <span class="n">puts</span> <span class="ow">and</span> <span class="n">calls</span><span class="o">.</span>
+<span class="o">+</span><span class="mi">1</span> <span class="n">represents</span> <span class="n">a</span> <span class="n">call</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span> <span class="n">represents</span> <span class="n">a</span> <span class="n">put</span><span class="o">.</span>
+
+<span class="n">See</span> <span class="n">page</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Introduction</span><span class="p">,</span> <span class="n">first</span> <span class="n">paragraph</span><span class="o">.</span>
+
+<span class="n">Throughout</span> <span class="n">vollib</span> <span class="n">this</span> <span class="ow">is</span> <span class="n">replaced</span> <span class="k">with</span> <span class="s1">&#39;c&#39;</span> <span class="ow">and</span> <span class="s1">&#39;p&#39;</span><span class="o">.</span>
+<span class="o">========================================================</span>    
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">binary_flag</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">binary_flag</span><span class="p">[</span><span class="s1">&#39;p&#39;</span><span class="p">]</span>
+<span class="go">-1</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="vollib.black_scholes_merton.greeks.html" class="btn btn-neutral float-left" title="vollib.black_scholes_merton.greeks package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vollib.ref_python.html" class="btn btn-neutral float-right" title="vollib.ref_python package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017, Gammon Capital LLC..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

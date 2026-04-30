@@ -1,0 +1,346 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>vollib.helpers.distributions &mdash; vollib 1.0.7 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=46dfa7f5"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            vollib
+              <img src="../../../_static/vollib_60.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../apidoc/modules.html">   vollib modules</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">vollib</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../helpers.html">vollib.helpers</a></li>
+      <li class="breadcrumb-item active">vollib.helpers.distributions</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for vollib.helpers.distributions</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">vollib.helpers.distributions</span>
+<span class="sd">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+
+<span class="sd">A library for option pricing, implied volatility, and</span>
+<span class="sd">greek calculation.  vollib is based on lets_be_rational,</span>
+<span class="sd">a Python wrapper for LetsBeRational by Peter Jaeckel as</span>
+<span class="sd">described below.</span>
+
+<span class="sd">:copyright: © 2017 Gammon Capital LLC</span>
+<span class="sd">:license: MIT, see LICENSE for more details.</span>
+
+<span class="sd">About LetsBeRational:</span>
+<span class="sd">~~~~~~~~~~~~~~~~~~~~~</span>
+
+<span class="sd">The source code of LetsBeRational resides at www.jaeckel.org/LetsBeRational.7z .</span>
+
+<span class="sd">::</span>
+
+<span class="sd">    ========================================================================================</span>
+<span class="sd">    Copyright © 2013-2014 Peter Jäckel.</span>
+
+<span class="sd">    Permission to use, copy, modify, and distribute this software is freely granted,</span>
+<span class="sd">    provided that this notice is preserved.</span>
+
+<span class="sd">    WARRANTY DISCLAIMER</span>
+<span class="sd">    The Software is provided &quot;as is&quot; without warranty of any kind, either express or implied,</span>
+<span class="sd">    including without limitation any implied warranties of condition, uninterrupted use,</span>
+<span class="sd">    merchantability, fitness for a particular purpose, or non-infringement.</span>
+<span class="sd">    ========================================================================================</span>
+
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="c1"># -----------------------------------------------------------------------------</span>
+<span class="c1"># IMPORTS</span>
+
+<span class="c1"># Standard library imports</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+
+<span class="c1"># Related third party imports</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+
+<span class="c1"># Local application/library specific imports</span>
+
+
+<div class="viewcode-block" id="CND">
+<a class="viewcode-back" href="../../../apidoc/vollib.helpers.html#vollib.helpers.distributions.CND">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">CND</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mf">37.</span><span class="p">:</span>
+        <span class="n">CND</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">Exponential</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">y</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mf">7.07106781186547</span><span class="p">:</span>
+            <span class="n">SumA</span> <span class="o">=</span> <span class="mf">3.52624965998911E-02</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.700383064443688</span>
+            <span class="n">SumA</span> <span class="o">=</span> <span class="n">SumA</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">6.37396220353165</span>
+            <span class="n">SumA</span> <span class="o">=</span> <span class="n">SumA</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">33.912866078383</span>
+            <span class="n">SumA</span> <span class="o">=</span> <span class="n">SumA</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">112.079291497871</span>
+            <span class="n">SumA</span> <span class="o">=</span> <span class="n">SumA</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">221.213596169931</span>
+            <span class="n">SumA</span> <span class="o">=</span> <span class="n">SumA</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">220.206867912376</span>
+            <span class="n">SumB</span> <span class="o">=</span> <span class="mf">8.83883476483184E-02</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">1.75566716318264</span>
+            <span class="n">SumB</span> <span class="o">=</span> <span class="n">SumB</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">16.064177579207</span>
+            <span class="n">SumB</span> <span class="o">=</span> <span class="n">SumB</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">86.7807322029461</span>
+            <span class="n">SumB</span> <span class="o">=</span> <span class="n">SumB</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">296.564248779674</span>
+            <span class="n">SumB</span> <span class="o">=</span> <span class="n">SumB</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">637.333633378831</span>
+            <span class="n">SumB</span> <span class="o">=</span> <span class="n">SumB</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">793.826512519948</span>
+            <span class="n">SumB</span> <span class="o">=</span> <span class="n">SumB</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">440.413735824752</span>
+            <span class="n">CND</span> <span class="o">=</span> <span class="n">Exponential</span> <span class="o">*</span> <span class="n">SumA</span> <span class="o">/</span> <span class="n">SumB</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">SumA</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.65</span>
+            <span class="n">SumA</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">4.</span> <span class="o">/</span> <span class="n">SumA</span>
+            <span class="n">SumA</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">3.</span> <span class="o">/</span> <span class="n">SumA</span>
+            <span class="n">SumA</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">2.</span> <span class="o">/</span> <span class="n">SumA</span>
+            <span class="n">SumA</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">SumA</span>
+            <span class="n">CND</span> <span class="o">=</span> <span class="n">Exponential</span> <span class="o">/</span> <span class="p">(</span><span class="n">SumA</span> <span class="o">*</span> <span class="mf">2.506628274631</span><span class="p">)</span>
+
+    <span class="n">CND</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">CND</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">CND</span>
+
+    <span class="k">return</span> <span class="n">CND</span></div>
+
+
+
+<div class="viewcode-block" id="CBND">
+<a class="viewcode-back" href="../../../apidoc/vollib.helpers.html#vollib.helpers.distributions.CBND">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">CBND</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">rho</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A function for computing bivariate normal probabilities.</span>
+<span class="sd">    </span>
+<span class="sd">    ::</span>
+<span class="sd">    </span>
+<span class="sd">        Alan Genz</span>
+<span class="sd">        Department of Mathematics</span>
+<span class="sd">        Washington State University</span>
+<span class="sd">        Pullman, WA 99164-3113</span>
+<span class="sd">        Email : alangenz@wsu.edu</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    This function is based on the method described by</span>
+<span class="sd">    </span>
+<span class="sd">    ::</span>
+<span class="sd">    </span>
+<span class="sd">        Drezner, Z and G.O. Wesolowsky, (1990),</span>
+<span class="sd">        On the computation of the bivariate normal integral,</span>
+<span class="sd">        Journal of Statist. Comput. Simul. 35, pp. 101-107,</span>
+<span class="sd">    </span>
+<span class="sd">    </span>
+<span class="sd">    with major modifications for double precision, and for ``|R|`` close to 1.</span>
+<span class="sd">    This code was originally transelated into VBA by Graeme West</span>
+<span class="sd">    </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">W</span>  <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">11</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+    <span class="n">XX</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">11</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.17132449237917</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.932469514203152</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.360761573048138</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.661209386466265</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.46791393457269</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.238619186083197</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.71753363865118E-02</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.981560634246719</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.106939325995318</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.904117256370475</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.160078328543346</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.769902674194305</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.203167426723066</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.587317954286617</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.233492536538355</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.36783149899818</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.249147045813403</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.125233408511469</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.76140071391521E-02</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.993128599185095</span>
+    <span class="n">W</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.06014298003869E-02</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.963971927277914</span>
+    <span class="n">W</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">6.26720483341091E-02</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.912234428251326</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">8.32767415767048E-02</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">4</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.839116971822219</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.10193011981724</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.746331906460151</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.118194531961518</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">6</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.636053680726515</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.131688638449177</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">7</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.510867001950827</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.142096109318382</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">8</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.37370608871542</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">9</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.149172986472604</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">9</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.227785851141645</span>
+
+    <span class="n">W</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.152753387130726</span>
+    <span class="n">XX</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">7.65265211334973E-02</span>
+
+    <span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.3</span><span class="p">:</span>
+        <span class="n">NG</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="n">LG</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">elif</span> <span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.75</span><span class="p">:</span>
+        <span class="n">NG</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="n">LG</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">NG</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="n">LG</span> <span class="o">=</span> <span class="mi">10</span>
+
+    <span class="n">h</span> <span class="o">=</span> <span class="o">-</span><span class="n">x</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="o">-</span><span class="n">y</span>
+    <span class="n">hk</span> <span class="o">=</span> <span class="n">h</span> <span class="o">*</span> <span class="n">k</span>
+    <span class="n">BVN</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.925</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">hs</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span> <span class="o">*</span> <span class="n">h</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span>
+            <span class="n">asr</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">LG</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">ISs</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="n">sn</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">asr</span> <span class="o">*</span> <span class="p">(</span><span class="n">ISs</span> <span class="o">*</span> <span class="n">XX</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">NG</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+                <span class="n">BVN</span> <span class="o">=</span> <span class="n">BVN</span> <span class="o">+</span> <span class="n">W</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">NG</span><span class="p">]</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">sn</span> <span class="o">*</span> <span class="n">hk</span> <span class="o">-</span> <span class="n">hs</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">sn</span> <span class="o">*</span> <span class="n">sn</span><span class="p">))</span>
+            <span class="n">BVN</span> <span class="o">=</span> <span class="n">BVN</span> <span class="o">*</span> <span class="n">asr</span> <span class="o">/</span> <span class="p">(</span><span class="mf">4.</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="n">BVN</span> <span class="o">=</span> <span class="n">BVN</span> <span class="o">+</span> <span class="n">CND</span><span class="p">(</span><span class="o">-</span><span class="n">h</span><span class="p">)</span> <span class="o">*</span> <span class="n">CND</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">rho</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">k</span> <span class="o">=</span> <span class="o">-</span><span class="n">k</span>
+            <span class="n">hk</span> <span class="o">=</span> <span class="o">-</span><span class="n">hk</span>
+
+        <span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">rho</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1.</span><span class="p">:</span>
+            <span class="n">Ass</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">rho</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">+</span> <span class="n">rho</span><span class="p">)</span>
+            <span class="n">A</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Ass</span><span class="p">)</span>
+            <span class="n">bs</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+            <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mf">4.</span> <span class="o">-</span> <span class="n">hk</span><span class="p">)</span> <span class="o">/</span> <span class="mf">8.</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="mf">12.</span> <span class="o">-</span> <span class="n">hk</span><span class="p">)</span> <span class="o">/</span> <span class="mf">16.</span>
+            <span class="n">asr</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">bs</span> <span class="o">/</span> <span class="n">Ass</span> <span class="o">+</span> <span class="n">hk</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.</span>
+            <span class="k">if</span> <span class="n">asr</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">100</span><span class="p">:</span>
+                <span class="n">BVN</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">asr</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">c</span> <span class="o">*</span> <span class="p">(</span><span class="n">bs</span> <span class="o">-</span> <span class="n">Ass</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">d</span> <span class="o">*</span> <span class="n">bs</span> <span class="o">/</span> <span class="mf">5.</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span> <span class="o">*</span> <span class="n">Ass</span> <span class="o">*</span> <span class="n">Ass</span> <span class="o">/</span> <span class="mf">5.</span><span class="p">)</span>
+        <span class="k">if</span> <span class="o">-</span><span class="n">hk</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">bs</span><span class="p">)</span>
+            <span class="n">BVN</span> <span class="o">=</span> <span class="n">BVN</span> <span class="o">-</span> <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">hk</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span> <span class="o">*</span> <span class="n">CND</span><span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">/</span> <span class="n">A</span><span class="p">)</span> <span class="o">*</span> <span class="n">b</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">c</span> <span class="o">*</span> <span class="n">bs</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">d</span> <span class="o">*</span> <span class="n">bs</span> <span class="o">/</span> <span class="mf">5.</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.</span><span class="p">)</span>
+
+        <span class="n">A</span> <span class="o">=</span> <span class="n">A</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">LG</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">ISs</span> <span class="ow">in</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">xs</span> <span class="o">=</span> <span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="p">(</span><span class="n">ISs</span> <span class="o">*</span> <span class="n">XX</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">NG</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span>
+                <span class="n">rs</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">xs</span><span class="p">)</span>
+                <span class="n">asr</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">bs</span> <span class="o">/</span> <span class="n">xs</span> <span class="o">+</span> <span class="n">hk</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+                <span class="k">if</span> <span class="n">asr</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">100</span><span class="p">:</span>
+                    <span class="n">BVN</span> <span class="o">=</span> <span class="n">BVN</span> <span class="o">+</span> <span class="n">A</span> <span class="o">*</span> <span class="n">W</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">NG</span><span class="p">)</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">asr</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">hk</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rs</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rs</span><span class="p">)))</span> <span class="o">/</span> <span class="n">rs</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">c</span> <span class="o">*</span> <span class="n">xs</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">d</span> <span class="o">*</span> <span class="n">xs</span><span class="p">)))</span>
+
+        <span class="n">BVN</span> <span class="o">=</span> <span class="o">-</span><span class="n">BVN</span> <span class="o">/</span> <span class="p">(</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">rho</span> <span class="o">&gt;</span> <span class="mf">0.</span><span class="p">:</span>
+            <span class="n">BVN</span> <span class="o">=</span> <span class="n">BVN</span> <span class="o">+</span> <span class="n">CND</span><span class="p">(</span><span class="o">-</span><span class="nb">max</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">BVN</span> <span class="o">=</span> <span class="o">-</span><span class="n">BVN</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="n">h</span><span class="p">:</span>
+                <span class="n">BVN</span> <span class="o">=</span> <span class="n">BVN</span> <span class="o">+</span> <span class="n">CND</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="n">CND</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+    <span class="n">CBND</span> <span class="o">=</span> <span class="n">BVN</span>
+
+    <span class="k">return</span> <span class="n">CBND</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">vollib.helpers.doctest_helper</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_doctest</span>
+    <span class="n">run_doctest</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2017, Gammon Capital LLC..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

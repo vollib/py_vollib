@@ -59,7 +59,7 @@ def black(flag, F, K, t, r, sigma):
 
     :param F: underlying futures price
     :type F: float
-    :param K: strike price
+    :param K: strike price; must be strictly positive.
     :type K: float
     :param sigma: annualized standard deviation, or volatility
     :type sigma: float
@@ -89,7 +89,7 @@ def undiscounted_black(F, K, sigma, t, flag):
 
     :param F: underlying futures price
     :type F: float
-    :param K: strike price
+    :param K: strike price; must be strictly positive.
     :type K: float
     :param sigma: annualized standard deviation, or volatility
     :type sigma: float
@@ -174,5 +174,4 @@ def normalised_black(x, s, flag):
 if __name__ == "__main__":
     from vollib.helpers.doctest_helper import run_doctest
     run_doctest()
-
 
