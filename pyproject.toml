@@ -25,13 +25,13 @@ python = ">=3.9,<3.13"
 cody-special = "^1.0.0"
 piecewise-rational = "^1.0.0"
 py_lets_be_rational = "^1.0.1"
-simplejson = "^3.0"
-numpy = "^1.20"
-pandas = "^2.0"
-scipy = "^1.10"
+numpy = "*"
+scipy = "*"
 
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.4,<9.0"
+simplejson = "*"
+pandas = "*"
 
 [build-system]
 requires = ["poetry-core"]
