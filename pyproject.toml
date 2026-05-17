@@ -21,7 +21,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.13"
+python = ">=3.9,<4"
 cody-special = "^1.0.0"
 piecewise-rational = "^1.0.0"
 py_lets_be_rational = "^1.0.1"
