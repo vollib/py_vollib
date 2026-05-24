@@ -13,7 +13,7 @@ setup(
     maintainer='vollib',
     maintainer_email='vollib@gammoncap.com',
     license='MIT',
-    python = ">=3.9,<3.13"
+    python_requires='>=3.9,<3.13',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.9',
