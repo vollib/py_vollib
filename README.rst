@@ -39,7 +39,7 @@ Package history and compatibility
    :header-rows: 1
 
    * - Feature
-     - ``vollib`` 1.0.7 and later
+     - ``vollib`` 1.0.8 and later
      - ``py_vollib`` 1.0.x
      - ``vollib`` 0.1.x
    * - Python Version Compatibility
@@ -51,7 +51,7 @@ Package history and compatibility
      - Python
      - C with Python SWIG Wrapper
    * - Core Dependency (automatically installed by pip)
-     - ``py_lets_be_rational``
+     - ``lets_be_rational``
      - ``py_lets_be_rational``
      - ``lets_be_rational``
 
@@ -65,14 +65,14 @@ About the reference Python implementation
 -----------------------------------------
 
 ``vollib`` contains ``vollib.ref_python``, a pure python version of the functions in ``vollib.*``, except
-without any dependency on ``lets_be_rational`` or ``py_lets_be_rational``.  It is provided purely as a reference
+without any dependency on ``lets_be_rational``.  It is provided purely as a reference
 implementation for sanity checking. It is not recommended for serious use.
 
 
 Dependencies
 ------------
 
-``vollib`` 1.0.7 supports Python 3.9 through 3.12. Its core dependency is ``py_lets_be_rational``,
+``vollib`` 1.0.8 supports Python 3.9 through 3.12. Its core dependency is ``lets_be_rational``,
 a pure python implementation of Peter Jäckel's original C source code.
 
 To install via pip, type the following::
@@ -148,7 +148,6 @@ Links
   * `pip <https://pypi.python.org/pypi/pip>`_
   * `Licence <http://vollib.org/license>`_
   * `Vollib Home <http://vollib.org>`_
-  * `py_lets_be_rational <http://github.com/vollib/py_lets_be_rational>`_
   * `lets_be_rational <http://github.com/vollib/lets_be_rational>`_
   * `vollib <http://github.com/vollib/py_vollib>`_
 

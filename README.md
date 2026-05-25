@@ -17,7 +17,7 @@ This domain requirement applies equally to calls and puts:
 
 ## Installation
 
-`vollib` 1.0.7 supports Python 3.9 through 3.12.
+`vollib` 1.0.8 supports Python 3.9 through 3.12.
 
 ```bash
 pip install vollib
@@ -70,7 +70,7 @@ The same pattern is available for Black and Black-Scholes-Merton through their r
 
 - `cody-special` - High-precision error functions and normal distribution
 - `piecewise-rational` - Shape-preserving piecewise rational cubic interpolation
-- `py_lets_be_rational` - Pure Python implementation of Peter Jaeckel's LetsBeRational
+- `lets_be_rational` - Pure Python implementation of Peter Jaeckel's LetsBeRational
 - `numpy`
 - `pandas`
 - `scipy`

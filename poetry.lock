@@ -51,6 +51,22 @@ files = [
 ]
 
 [[package]]
+name = "lets-be-rational"
+version = "1.1.0"
+description = "Pure python implementation of Peter Jaeckel's LetsBeRational."
+optional = false
+python-versions = "<4.0,>=3.9"
+files = [
+    {file = "lets_be_rational-1.1.0-py3-none-any.whl", hash = "sha256:a55acf1faa8d78352164bf1a23089fd4020cd1634e4a16b36ae0ea8972fcaf20"},
+    {file = "lets_be_rational-1.1.0.tar.gz", hash = "sha256:60f2c1948e5364f819bfc703316e6a1fea0813b769c1038d9817e7db7658be5d"},
+]
+
+[package.dependencies]
+cody-special = ">=1.0.0,<2.0.0"
+numpy = ">=1.20,<2.0"
+piecewise-rational = ">=1.0.0,<2.0.0"
+
+[[package]]
 name = "numpy"
 version = "1.26.4"
 description = "Fundamental package for array computing in Python"
@@ -232,19 +248,6 @@ dev = ["pre-commit", "tox"]
 testing = ["coverage", "pytest", "pytest-benchmark"]
 
 [[package]]
-name = "py-lets-be-rational"
-version = "1.0.1"
-description = "Pure python implementation of Peter Jaeckel's LetsBeRational."
-optional = false
-python-versions = "*"
-files = [
-    {file = "py_lets_be_rational-1.0.1.tar.gz", hash = "sha256:0e0788a4109e102a666f26d67276c0d3c2feb8a059e788354a90e565f2db0ed2"},
-]
-
-[package.dependencies]
-numpy = "*"
-
-[[package]]
 name = "pygments"
 version = "2.20.0"
 description = "Pygments is a syntax highlighting package written in Python."
@@ -297,13 +300,13 @@ six = ">=1.5"
 
 [[package]]
 name = "pytz"
-version = "2026.1.post1"
+version = "2026.2"
 description = "World timezone definitions, modern and historical"
 optional = false
 python-versions = "*"
 files = [
-    {file = "pytz-2026.1.post1-py2.py3-none-any.whl", hash = "sha256:f2fd16142fda348286a75e1a524be810bb05d444e5a081f37f7affc635035f7a"},
-    {file = "pytz-2026.1.post1.tar.gz", hash = "sha256:3378dde6a0c3d26719182142c56e60c7f9af7e968076f31aae569d72a0358ee1"},
+    {file = "pytz-2026.2-py2.py3-none-any.whl", hash = "sha256:04156e608bee23d3792fd45c94ae47fae1036688e75032eea2e3bf0323d1f126"},
+    {file = "pytz-2026.2.tar.gz", hash = "sha256:0e60b47b29f21574376f218fe21abc009894a2321ea16c6754f3cad6eb7cdd6a"},
 ]
 
 [[package]]
@@ -558,5 +561,5 @@ files = [
 
 [metadata]
 lock-version = "2.0"
-python-versions = "^3.9"
-content-hash = "b543fd4519574fd863428327ec8010f7183f3161948cf0c61f4dbe69a0b619ea"
+python-versions = ">=3.9,<3.13"
+content-hash = "ad6322b8736aae9990d93004fffe40dd3825cdbd17b845369a95114f74050c5a"

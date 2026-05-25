@@ -1,10 +1,10 @@
 """Compatibility exports for LetsBeRational functionality.
 
-The implementation lives in the external ``py_lets_be_rational`` package.
+The implementation lives in the external ``lets_be_rational`` package.
 This module preserves the historical ``vollib.lets_be_rational`` namespace.
 """
 
-from py_lets_be_rational import (
+from lets_be_rational import (
     black,
     implied_volatility_from_a_transformed_rational_guess,
     implied_volatility_from_a_transformed_rational_guess_with_limited_iterations,
@@ -15,7 +15,7 @@ from py_lets_be_rational import (
     normalised_implied_volatility_from_a_transformed_rational_guess_with_limited_iterations,
     normalised_vega,
 )
-from py_lets_be_rational.exceptions import AboveMaximumException, BelowIntrinsicException
+from lets_be_rational.exceptions import AboveMaximumException, BelowIntrinsicException
 
 PriceIsBelowIntrinsic = BelowIntrinsicException
 PriceIsAboveMaximum = AboveMaximumException
