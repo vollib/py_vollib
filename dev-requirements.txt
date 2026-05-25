@@ -1,6 +1,6 @@
-# for documentation
-sphinx==8.2.3
-sphinx_rtd_theme==3.0.2
+# for documentation (requires Python >=3.11)
+sphinx==8.2.3; python_version >= "3.11"
+sphinx_rtd_theme==3.0.2; python_version >= "3.11"
 
 # for testing
 pytest==8.4.2
