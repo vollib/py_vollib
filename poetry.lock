@@ -52,13 +52,13 @@ files = [
 
 [[package]]
 name = "lets-be-rational"
-version = "1.1.1"
+version = "1.1.2"
 description = "Pure python implementation of Peter Jaeckel's LetsBeRational."
 optional = false
 python-versions = "<4.0,>=3.9"
 files = [
-    {file = "lets_be_rational-1.1.1-py3-none-any.whl", hash = "sha256:b4ea3eaa36574c3f4c87c5ea9d1afb0b13a03eec5174f116c600c58a2fa5ed6e"},
-    {file = "lets_be_rational-1.1.1.tar.gz", hash = "sha256:aa89791f4e6f7f977e5a6cac6120dcdc1aaeece04b34c24b0ad7b09d7b9cd9b4"},
+    {file = "lets_be_rational-1.1.2-py3-none-any.whl", hash = "sha256:cdd55b3e6504be8a2006eedaca7e56c7b9ccdffe9b7b1ad61f06bf8f5552e3aa"},
+    {file = "lets_be_rational-1.1.2.tar.gz", hash = "sha256:ddae4a78c09d180223cb1db2e3e70704d29ca295822196c0564ea22b104586f8"},
 ]
 
 [package.dependencies]
@@ -571,4 +571,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "0243fe95999985bfdb20ab73f03d22606f674e5b1b4c17aee9266085480861a6"
+content-hash = "4adccaf8db63d414c2d04a2d92b44aca2319d07e823c85dcd191584becb2d942"

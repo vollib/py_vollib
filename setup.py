@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='vollib',
-    version='1.0.9',
+    version='1.0.10',
     description='Python library for calculating option prices, implied volatility and greeks.',
     url='http://vollib.org',
     maintainer='vollib',
@@ -25,7 +25,7 @@ setup(
     install_requires=[
         'cody-special>=1.0.0,<2.0.0',
         'piecewise-rational>=1.0.0,<2.0.0',
-        'lets-be-rational>=1.1.1,<2.0.0',
+        'lets-be-rational>=1.1.2,<2.0.0',
         'simplejson',
         'numpy>=1.20',
         'pandas>=2.0',
